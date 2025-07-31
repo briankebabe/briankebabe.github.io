@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Mirieri Kebabe | Flutter Developer & IT Expert</title>
+    <meta name="description" content="Portfolio of Brian Mirieri Kebabe, Flutter Developer and IT Solutions Expert based in Mombasa, Kenya">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#1E40AF',
+                        accent: '#10B981',
+                        dark: '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-primary">Brian Kebabe</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-primary transition">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-primary transition">Experience</a>
+                    <a href="#skills" class="text-gray-700 hover:text-primary transition">Skills</a>
+                    <a href="#projects" class="text-gray-700 hover:text-primary transition">Projects</a>
+                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white pb-4 px-4 shadow-md">
+            <a href="#about" class="block py-2 text-gray-700 hover:text-primary">About</a>
+            <a href="#experience" class="block py-2 text-gray-700 hover:text-primary">Experience</a>
+            <a href="#skills" class="block py-2 text-gray-700 hover:text-primary">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-700 hover:text-primary">Projects</a>
+            <a href="#contact" class="block mt-2 bg-primary text-white px-4 py-2 rounded-md text-center hover:bg-secondary">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Brian Mirieri Kebabe</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Flutter Developer / IT Expert</h2>
+                    <p class="text-lg mb-8">Passionate about building seamless digital experiences and solving complex IT challenges.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition">Hire Me</a>
+                        <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition">View Work</a>
+                    </div>
+                </div>
+                <div class="md:w-1/3">
+                    <div class="bg-white p-1 rounded-full shadow-xl">
+                        <img src="assets/images/profile.jpg" alt="Brian Mirieri Kebabe" class="rounded-full w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <p class="text-lg text-gray-700 mb-6">
+                        I'm Brian Mirieri Kebabe, a passionate Flutter Developer and IT Solutions Expert with a strong foundation in software development, IT support, and emerging technologies like AI and machine learning.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        I hold a Bachelor's degree in Computer Science from Maasai Mara University and have hands-on experience in software development, IT infrastructure, and innovative problem-solving.
+                    </p>
+                    <div class="bg-gray-100 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-briefcase text-primary mr-3"></i>
+                            <span class="font-medium">Experience:</span>
+                            <span class="ml-2">2+ years</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-primary mr-3"></i>
+                            <span class="font-medium">Location:</span>
+                            <span class="ml-2">Mombasa, Kenya</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-primary mr-3"></i>
+                            <span class="font-medium">Email:</span>
+                            <a href="mailto:briankebabe00@gmail.com" class="ml-2 text-primary hover:underline">briankebabe00@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4 text-dark">What I Do</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <i class="fas fa-mobile-alt text-2xl text-primary mb-3"></i>
+                            <h4 class="font-semibold mb-2">Mobile Development</h4>
+                            <p class="text-gray-600">Building cross-platform apps with Flutter for iOS and Android with beautiful UI and smooth performance.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <i class="fas fa-laptop-code text-2xl text-primary mb-3"></i>
+                            <h4 class="font-semibold mb-2">Web Development</h4>
+                            <p class="text-gray-600">Creating responsive websites with modern technologies like PHP, JavaScript, and Tailwind CSS.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <i class="fas fa-network-wired text-2xl text-primary mb-3"></i>
+                            <h4 class="font-semibold mb-2">IT Support</h4>
+                            <p class="text-gray-600">Troubleshooting hardware/software issues, network configuration, and system administration.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <i class="fas fa-brain text-2xl text-primary mb-3"></i>
+                            <h4 class="font-semibold mb-2">AI Solutions</h4>
+                            <p class="text-gray-600">Leveraging machine learning and deep learning to enhance applications and operations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Work Experience</h2>
+            <div class="space-y-8">
+                <!-- Project Mila -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-xl font-bold text-dark">Project Mila</h3>
+                        <span class="text-primary font-medium">Lead Developer | Senior level</span>
+                    </div>
+                    <div class="flex items-center text-gray-600 mb-4">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Oct 2023 - Present</span>
+                        <i class="fas fa-map-marker-alt ml-4 mr-2"></i>
+                        <span>Mombasa, Kenya</span>
+                    </div>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Spearheaded the complete redesign and development of Project Mila's WordPress website using PHP, Tailwind CSS, JavaScript, and HTML, enhancing performance, accessibility, and SEO—improving PageSpeed Insights scores from below 44% to over 90% across all metrics.</li>
+                        <li>Optimized the website by eliminating unnecessary plugins, refining UI/UX, and implementing best practices for faster load times and improved user engagement.</li>
+                        <li>Currently developing a Flutter-based e-commerce app using GetX, BLoC, and Supabase, integrating machine learning (ML) and deep learning (DL) techniques to enhance functionality and user experience.</li>
+                        <li>Provided IT consulting and technical solutions to support the organization's digital growth as a foundational team member in its early stages.</li>
+                    </ul>
+                </div>
+                
+                <!-- Metropolitan Hospital -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-xl font-bold text-dark">Metropolitan Hospital</h3>
+                        <span class="text-primary font-medium">IT Specialist | Internship & Graduate</span>
+                    </div>
+                    <div class="flex items-center text-gray-600 mb-4">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>May 2023 - Aug 2023</span>
+                        <i class="fas fa-map-marker-alt ml-4 mr-2"></i>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Actively involved in diverse technical support tasks, including software installation, telephone extensions, printer troubleshooting, and network configuration.</li>
+                        <li>Contributed to the hospital's operational efficiency through hands-on IT support and problem-solving.</li>
+                        <li>Gained valuable experience in a collaborative environment that fostered rapid learning and skill development.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Skills & Expertise</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition">
+                    <i class="fab fa-flutter text-4xl text-primary mb-3"></i>
+                    <h4 class="font-semibold">Flutter</h4>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition">
+                    <i class="fab fa-js text-4xl text-primary mb-3"></i>
+                    <h4 class="font-semibold">JavaScript</h4>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition">
+                    <i class="fab fa-php text-4xl text-primary mb-3"></i>
+                    <h4 class="font-semibold">PHP</h4>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition">
+                    <i class="fas fa-database text-4xl text-primary mb-3"></i>
+                    <h4 class="font-semibold">Database Admin</h4>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition">
+                    <i class="fas fa-network-wired text-4xl text-primary mb-3"></i>
+                    <h4 class="font-semibold">Network Admin</h4>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition">
+                    <i class="fas fa-server text-4xl text-primary mb-3"></i>
+                    <h4 class="font-semibold">System Admin</h4>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition">
+                    <i class="fas fa-headset text-4xl text-primary mb-3"></i>
+                    <h4 class="font-semibold">IT Support</h4>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition">
+                    <i class="fas fa-robot text-4xl text-primary mb-3"></i>
+                    <h4 class="font-semibold">AI/ML</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project Mila Website -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Project Mila Website</h3>
+                        <p class="text-gray-600 mb-4">Complete redesign and development of Project Mila's WordPress website with performance optimization.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">PHP</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">WordPress</span>
+                        </div>
+                        <a href="https://projectmila.com/" target="_blank" class="text-primary font-medium hover:underline">View Project →</a>
+                    </div>
+                </div>
+                
+                <!-- Flutter E-commerce App -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
+                    <div class="h-48 bg-gradient-to-r from-accent to-green-500 flex items-center justify-center">
+                        <i class="fas fa-mobile-alt text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Flutter E-commerce App</h3>
+                        <p class="text-gray-600 mb-4">Developing a Flutter-based e-commerce app with GetX, BLoC, and Supabase, integrating ML/DL techniques.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Flutter</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Dart</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">GetX</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">BLoC</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Supabase</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                        </div>
+                        <a href="#contact" class="text-primary font-medium hover:underline">Coming Soon →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Get In Touch</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <p class="text-gray-700 mb-6">Feel free to reach out to me for job opportunities, collaborations, or just to say hello!</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-primary mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <a href="mailto:briankebabe00@gmail.com" class="text-gray-600 hover:text-primary hover:underline">briankebabe00@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-primary mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">Phone</h4>
+                                <a href="tel:+254748251265" class="text-gray-600 hover:text-primary hover:underline">+254 748 251 265</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-medium">Location</h4>
+                                <p class="text-gray-600">Mombasa, Kenya</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-medium mb-4">Connect with me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-secondary transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-xl font-bold text-white">Brian Kebabe</a>
+                    <p class="text-gray-400 mt-1">Flutter Developer & IT Expert</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
+                    <a href="#experience" class="text-gray-400 hover:text-white transition">Experience</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-400">
+                <p>&copy; <span id="year"></span> Brian Mirieri Kebabe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
