@@ -18,11 +18,11 @@ This is my professional portfolio website showcasing my skills, experience, and 
 - Font Awesome icons
 
 ## 🚀 Live Portfolio  
-**[View Online](https://briankebabe.github.io/brian-portfolio)**  
+**[View Online](https://briankebabe.github.io)**  
 
 **Local Setup:**  
 ```bash
-git clone https://github.com/briankebabe/brian-portfolio.git  
+git clone https://github.com/briankebabe.github.io  
 open index.html  
 
 ## License
