@@ -3,77 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Mirieri Kebabe | Flutter Developer & IT Expert</title>
-    <meta name="description" content="Portfolio of Brian Mirieri Kebabe, Flutter Developer and IT Solutions Expert based in Mombasa, Kenya">
+    <title>Brian Mirieri Kebabe | Full-Stack Developer & Tech Solutions Specialist</title>
+    <meta name="description" content="Portfolio of Brian Mirieri Kebabe, Full-Stack Developer & Tech Solutions Specialist based in Mombasa, Kenya">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#3B82F6',
-                        secondary: '#1E40AF',
-                        accent: '#10B981',
-                        dark: '#1F2937',
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+     <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold text-primary">Brian Kebabe</a>
+                <!-- Empty div for spacing on mobile -->
+                <div class="flex items-center md:hidden">
+                    <div class="w-6"></div> <!-- Spacer for mobile hamburger alignment -->
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-700 hover:text-primary transition">About</a>
-                    <a href="#experience" class="text-gray-700 hover:text-primary transition">Experience</a>
-                    <a href="#skills" class="text-gray-700 hover:text-primary transition">Skills</a>
-                    <a href="#projects" class="text-gray-700 hover:text-primary transition">Projects</a>
-                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary transition">Contact</a>
+                
+                <!-- Centered navigation for desktop -->
+                <div class="hidden md:flex items-center justify-center flex-1">
+                    <div class="flex items-center space-x-8">
+                        <a href="#home" class="text-slate-700 hover:text-primary transition-colors font-medium">Home</a>
+                        <a href="#about" class="text-slate-700 hover:text-primary transition-colors font-medium">About</a>
+                        <a href="#experience" class="text-slate-700 hover:text-primary transition-colors font-medium">Experience</a>
+                        <a href="#skills" class="text-slate-700 hover:text-primary transition-colors font-medium">Skills</a>
+                        <a href="#projects" class="text-slate-700 hover:text-primary transition-colors font-medium">Projects</a>
+                        <a href="#contact" class="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl font-medium">
+                            Contact Me
+                        </a>
+                    </div>
                 </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-700">
+                
+                <!-- Hamburger menu for mobile (far right) -->
+                <div class="flex items-center md:hidden">
+                    <button id="menu-btn" class="text-slate-700 hover:text-primary">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
+                </div>
+                
+                <!-- Contact button for desktop (right side) -->
+                <div class="hidden md:flex items-center">
+                    <!-- This space intentionally left blank to balance the layout -->
                 </div>
             </div>
         </div>
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white pb-4 px-4 shadow-md">
-            <a href="#about" class="block py-2 text-gray-700 hover:text-primary">About</a>
-            <a href="#experience" class="block py-2 text-gray-700 hover:text-primary">Experience</a>
-            <a href="#skills" class="block py-2 text-gray-700 hover:text-primary">Skills</a>
-            <a href="#projects" class="block py-2 text-gray-700 hover:text-primary">Projects</a>
-            <a href="#contact" class="block mt-2 bg-primary text-white px-4 py-2 rounded-md text-center hover:bg-secondary">Contact</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-200">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block py-2 text-slate-700 hover:text-primary font-medium">Home</a>
+                <a href="#about" class="block py-2 text-slate-700 hover:text-primary font-medium">About</a>
+                <a href="#experience" class="block py-2 text-slate-700 hover:text-primary font-medium">Experience</a>
+                <a href="#skills" class="block py-2 text-slate-700 hover:text-primary font-medium">Skills</a>
+                <a href="#projects" class="block py-2 text-slate-700 hover:text-primary font-medium">Projects</a>
+                <a href="#contact" class="block mt-4 bg-primary text-white px-6 py-3 rounded-full text-center hover:bg-secondary font-medium">Contact Me</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-gradient-to-r from-primary to-secondary text-white py-20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Brian Mirieri Kebabe</h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold mb-6">Flutter Developer / IT Expert</h2>
-                    <p class="text-lg mb-8">Passionate about building seamless digital experiences and solving complex IT challenges.</p>
-                    <div class="flex space-x-4">
-                        <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition">Hire Me</a>
-                        <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-md font-medium hover:bg-white hover:text-primary transition">View Work</a>
+    <header id="home" class="gradient-bg text-white py-20 lg:py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-2/3 mb-12 lg:mb-0">
+                    <div class="mb-6">
+                        <span class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
+                            Available for Immediate Hire
+                        </span>
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Brian Mirieri <span class="text-accent">Kebabe</span>
+                    </h1>
+                    <h2 class="text-2xl lg:text-3xl font-semibold mb-6 text-blue-100">
+                        Full-Stack Developer & Tech Solutions Specialist
+                    </h2>
+                    <p class="text-xl mb-8 text-blue-100 leading-relaxed max-w-2xl">
+                        Bridging software development and IT infrastructure with 2 years of hands-on experience. 
+                        Bachelor's in Computer Science with expertise in mobile, web, and emerging technologies.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
+                            Hire Me
+                        </a>
+                        <a href="#projects" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all duration-300 text-center">
+                            View My Work
+                        </a>
                     </div>
                 </div>
-                <div class="md:w-1/3">
-                    <div class="bg-white p-1 rounded-full shadow-xl">
-                        <img src="assets/images/profile.jpg" alt="Brian Mirieri Kebabe" class="rounded-full w-full h-auto">
+                <div class="lg:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 lg:w-80 lg:h-80 bg-white/20 backdrop-blur-sm rounded-full p-2">
+                            <div class="w-full h-full bg-gradient-to-br from-accent/50 to-primary/50 rounded-full overflow-hidden border-4 border-white/30">
+                                <!-- Replace the src with your actual image URL -->
+                                <img src="assets\images\profile.jpg" 
+                                    alt="Brian Mirieri Kebabe" 
+                                    class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-accent text-white p-3 lg:p-4 rounded-full">
+                            <i class="fas fa-mobile-alt text-xl lg:text-2xl"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-success text-white p-3 lg:p-4 rounded-full">
+                            <i class="fas fa-database text-xl lg:text-2xl"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -81,57 +115,107 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12 text-dark">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <p class="text-lg text-gray-700 mb-6">
-                        I'm Brian Mirieri Kebabe, a passionate Flutter Developer and IT Solutions Expert with a strong foundation in software development, IT support, and emerging technologies like AI and machine learning.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-6">
-                        I hold a Bachelor's degree in Computer Science from Maasai Mara University and have hands-on experience in software development, IT infrastructure, and innovative problem-solving.
-                    </p>
-                    <div class="bg-gray-100 p-6 rounded-lg">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-briefcase text-primary mr-3"></i>
-                            <span class="font-medium">Experience:</span>
-                            <span class="ml-2">2+ years</span>
+    <section id="about" class="py-12 md:py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark mb-4">About Me</h2>
+                <div class="w-16 sm:w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4 sm:mb-6"></div>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+                    A passionate technologist with a proven track record of delivering exceptional results
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
+                <div>
+                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-2xl">
+                        <h3 class="text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-6">Professional Journey</h3>
+                        <div class="space-y-3 sm:space-y-4 text-gray-700 text-sm sm:text-base">
+                            <p class="leading-relaxed">
+                                A Full-Stack Developer and Tech Solutions Specialist with a 
+                                Bachelor's degree in Computer Science from Maasai Mara University. With 2+ years of 
+                                hands-on experience, I specialize in bridging software development and IT infrastructure.
+                            </p>
+                            <p class="leading-relaxed">
+                                My expertise spans mobile app development with Flutter, web optimization achieving 90%+ 
+                                performance improvements, and comprehensive IT solutions. I'm passionate about solving 
+                                complex technical challenges and delivering scalable solutions.
+                            </p>
                         </div>
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-map-marker-alt text-primary mr-3"></i>
-                            <span class="font-medium">Location:</span>
-                            <span class="ml-2">Mombasa, Kenya</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-primary mr-3"></i>
-                            <span class="font-medium">Email:</span>
-                            <a href="mailto:briankebabe00@gmail.com" class="ml-2 text-primary hover:underline">briankebabe00@gmail.com</a>
+                        
+                        <div class="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
+                            <div class="bg-white p-3 sm:p-4 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-1 sm:mb-2">
+                                    <i class="fas fa-map-marker-alt text-primary mr-2 text-sm sm:text-base"></i>
+                                    <span class="font-semibold text-dark text-sm sm:text-base">Location</span>
+                                </div>
+                                <p class="text-gray-600 text-xs sm:text-sm">Mombasa, Kenya</p>
+                            </div>
+                            <div class="bg-white p-3 sm:p-4 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-1 sm:mb-2">
+                                    <i class="fas fa-graduation-cap text-accent mr-2 text-sm sm:text-base"></i>
+                                    <span class="font-semibold text-dark text-sm sm:text-base">Education</span>
+                                </div>
+                                <p class="text-gray-600 text-xs sm:text-sm">BSc Computer Science</p>
+                            </div>
+                            <div class="bg-white p-3 sm:p-4 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-1 sm:mb-2">
+                                    <i class="fas fa-briefcase text-success mr-2 text-sm sm:text-base"></i>
+                                    <span class="font-semibold text-dark text-sm sm:text-base">Experience</span>
+                                </div>
+                                <p class="text-gray-600 text-xs sm:text-sm">2+ Years</p>
+                            </div>
+                            <div class="bg-white p-3 sm:p-4 rounded-xl shadow-sm">
+                                <div class="flex items-center mb-1 sm:mb-2">
+                                    <i class="fas fa-envelope text-warning mr-2 text-sm sm:text-base"></i>
+                                    <span class="font-semibold text-dark text-sm sm:text-base">Email</span>
+                                </div>
+                                <a href="mailto:briankebabe00@gmail.com" class="text-primary hover:underline text-xs sm:text-sm block truncate">briankebabe00@gmail.com</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/2">
-                    <h3 class="text-xl font-semibold mb-4 text-dark">What I Do</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                            <i class="fas fa-mobile-alt text-2xl text-primary mb-3"></i>
-                            <h4 class="font-semibold mb-2">Mobile Development</h4>
-                            <p class="text-gray-600">Building cross-platform apps with Flutter for iOS and Android with beautiful UI and smooth performance.</p>
+
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-dark mb-6 sm:mb-8">What I Bring to Your Organization</h3>
+                    <div class="space-y-4 sm:space-y-6">
+                        <div class="flex items-start group bg-white p-4 sm:p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
+                            <div class="bg-primary/10 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 group-hover:bg-primary/20 transition duration-300 flex-shrink-0">
+                                <i class="fas fa-brain text-primary text-lg sm:text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark mb-1 sm:mb-2 text-sm sm:text-base">Problem-Solving Mindset</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm">Proven ability to diagnose complex technical issues and implement efficient solutions</p>
+                            </div>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                            <i class="fas fa-laptop-code text-2xl text-primary mb-3"></i>
-                            <h4 class="font-semibold mb-2">Web Development</h4>
-                            <p class="text-gray-600">Creating responsive websites with modern technologies like PHP, JavaScript, and Tailwind CSS.</p>
+                        
+                        <div class="flex items-start group bg-white p-4 sm:p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
+                            <div class="bg-accent/10 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 group-hover:bg-accent/20 transition duration-300 flex-shrink-0">
+                                <i class="fas fa-users text-accent text-lg sm:text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark mb-1 sm:mb-2 text-sm sm:text-base">Leadership & Collaboration</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm">Currently leading development initiatives as a foundational team member</p>
+                            </div>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                            <i class="fas fa-network-wired text-2xl text-primary mb-3"></i>
-                            <h4 class="font-semibold mb-2">IT Support</h4>
-                            <p class="text-gray-600">Troubleshooting hardware/software issues, network configuration, and system administration.</p>
+                        
+                        <div class="flex items-start group bg-white p-4 sm:p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
+                            <div class="bg-success/10 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 group-hover:bg-success/20 transition duration-300 flex-shrink-0">
+                                <i class="fas fa-chart-line text-success text-lg sm:text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark mb-1 sm:mb-2 text-sm sm:text-base">Performance Excellence</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm">Achieved 90%+ performance improvements across multiple projects</p>
+                            </div>
                         </div>
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                            <i class="fas fa-brain text-2xl text-primary mb-3"></i>
-                            <h4 class="font-semibold mb-2">AI Solutions</h4>
-                            <p class="text-gray-600">Leveraging machine learning and deep learning to enhance applications and operations.</p>
+                        
+                        <div class="flex items-start group bg-white p-4 sm:p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
+                            <div class="bg-warning/10 p-3 rounded-xl mr-4 group-hover:bg-warning/20 transition duration-300">
+                                <i class="fas fa-rocket text-warning text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-dark mb-1 sm:mb-2 text-sm sm:text-base">Continuous Innovation</h4>
+                                <p class="text-gray-600 text-xs sm:text-sm">Committed to staying current with industry trends and best practices</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -139,493 +223,555 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-16 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Work Experience</h2>
+     <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark mb-4">Work Experience</h2>
+                <p class="text-xl text-muted">Building solutions across different industries</p>
+            </div>
+            
             <div class="space-y-8">
                 <!-- Project Mila -->
-                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                        <h3 class="text-xl font-bold text-dark">Project Mila</h3>
-                        <span class="text-primary font-medium">Lead Developer | Senior level</span>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-dark mb-2">Lead Developer</h3>
+                            <h4 class="text-xl text-primary font-semibold mb-3">Project Mila</h4>
+                            <div class="flex flex-wrap items-center gap-4 text-slate-600">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt mr-2 text-primary"></i>
+                                    <span>Oct 2023 - Present</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-2 text-primary"></i>
+                                    <span>Mombasa, Kenya</span>
+                                </div>
+                                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Senior Level</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center text-gray-600 mb-4">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>Oct 2023 - Present</span>
-                        <i class="fas fa-map-marker-alt ml-4 mr-2"></i>
-                        <span>Mombasa, Kenya</span>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-semibold text-slate-800 mb-4">Key Achievements:</h5>
+                            <ul class="space-y-3 text-slate-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-rocket text-success mt-1 mr-3"></i>
+                                    <span>Improved PageSpeed Insights scores from <44% to >90% across all metrics</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-code text-success mt-1 mr-3"></i>
+                                    <span>Complete website redesign using PHP, Tailwind CSS, JavaScript, and HTML</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-mobile-alt text-success mt-1 mr-3"></i>
+                                    <span>Developing Flutter e-commerce app with GetX, BLoC, and Supabase</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-brain text-success mt-1 mr-3"></i>
+                                    <span>Integrating ML/DL techniques for enhanced user experience</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-slate-800 mb-4">Technologies Used:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PHP</span>
+                                <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                                <span class="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Flutter</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Supabase</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Machine Learning</span>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                        <li>Spearheaded the complete redesign and development of Project Mila's WordPress website using PHP, Tailwind CSS, JavaScript, and HTML, enhancing performance, accessibility, and SEO—improving PageSpeed Insights scores from below 44% to over 90% across all metrics.</li>
-                        <li>Optimized the website by eliminating unnecessary plugins, refining UI/UX, and implementing best practices for faster load times and improved user engagement.</li>
-                        <li>Currently developing a Flutter-based e-commerce app using GetX, BLoC, and Supabase, integrating machine learning (ML) and deep learning (DL) techniques to enhance functionality and user experience.</li>
-                        <li>Provided IT consulting and technical solutions to support the organization's digital growth as a foundational team member in its early stages.</li>
-                    </ul>
                 </div>
                 
                 <!-- Metropolitan Hospital -->
-                <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
-                        <h3 class="text-xl font-bold text-dark">Metropolitan Hospital</h3>
-                        <span class="text-primary font-medium">IT Specialist | Internship & Graduate</span>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 card-hover">
+                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-dark mb-2">IT Specialist</h3>
+                            <h4 class="text-xl text-primary font-semibold mb-3">Metropolitan Hospital</h4>
+                            <div class="flex flex-wrap items-center gap-4 text-slate-600">
+                                <div class="flex items-center">
+                                    <i class="fas fa-calendar-alt mr-2 text-primary"></i>
+                                    <span>May 2023 - Aug 2023</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt mr-2 text-primary"></i>
+                                    <span>Nairobi, Kenya</span>
+                                </div>
+                                <span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-sm font-medium">Internship</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center text-gray-600 mb-4">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                        <span>May 2023 - Aug 2023</span>
-                        <i class="fas fa-map-marker-alt ml-4 mr-2"></i>
-                        <span>Nairobi, Kenya</span>
+                    
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div>
+                            <h5 class="font-semibold text-slate-800 mb-4">Responsibilities:</h5>
+                            <ul class="space-y-3 text-slate-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-tools text-accent mt-1 mr-3"></i>
+                                    <span>Technical support tasks including software installation and troubleshooting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-phone text-accent mt-1 mr-3"></i>
+                                    <span>Telephone extensions and communication systems management</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-network-wired text-accent mt-1 mr-3"></i>
+                                    <span>Network configuration and infrastructure support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chart-line text-accent mt-1 mr-3"></i>
+                                    <span>Contributed to operational efficiency in healthcare environment</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-slate-800 mb-4">Skills Developed:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">IT Support</span>
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Network Config</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Problem Solving</span>
+                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Team Collaboration</span>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
-                        <li>Actively involved in diverse technical support tasks, including software installation, telephone extensions, printer troubleshooting, and network configuration.</li>
-                        <li>Contributed to the hospital's operational efficiency through hands-on IT support and problem-solving.</li>
-                        <li>Gained valuable experience in a collaborative environment that fostered rapid learning and skill development.</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Skills & Expertise</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                <!-- Flutter -->
-                <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition group">
-                    <svg class="w-10 h-10 mx-auto mb-3 text-[#02569B]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z" fill="currentColor"/>
-                        <path d="M13.986 11.733l-6.47 6.523 6.47 6.475V11.733z" fill="#42A5F5"/>
-                    </svg>
-                    <h4 class="font-semibold text-gray-800 group-hover:text-primary">Flutter</h4>
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-dark mb-4">Technical Expertise</h2>
+                <p class="text-xl text-muted">Comprehensive skill set across multiple domains</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Mobile Development -->
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4">Mobile Development</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fab fa-flutter text-blue-500 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">Flutter</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fas fa-code text-blue-600 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">Dart</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fas fa-sitemap text-green-600 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">GetX</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fas fa-cubes text-purple-600 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">BLoC</p>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- JavaScript -->
-                <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition group">
-                    <svg class="w-10 h-10 mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 32 32" fill="none">
-                        <rect x="2" y="2" width="28" height="28" fill="#FFCA28"></rect>
-                        <path d="M19 25.2879L21.0615 23.9237C21.2231 24.4313 22.2462 25.6368 23.5385 25.6368C24.8308 25.6368 25.4308 24.931 25.4308 24.463C25.4308 23.1878 24.1112 22.7382 23.4774 22.5223C23.374 22.4871 23.289 22.4581 23.2308 22.4328C23.2009 22.4198 23.1558 22.4025 23.0979 22.3804C22.393 22.1111 19.7923 21.1175 19.7923 18.2373C19.7923 15.065 22.8538 14.7002 23.5462 14.7002C23.9991 14.7002 26.1769 14.7557 27.2615 16.7939L25.2615 18.1898C24.8231 17.3015 24.0946 17.0081 23.6462 17.0081C22.5385 17.0081 22.3077 17.8201 22.3077 18.1898C22.3077 19.227 23.5112 19.6919 24.5273 20.0844C24.7932 20.1871 25.0462 20.2848 25.2615 20.3866C26.3692 20.91 28 21.7666 28 24.463C28 25.8136 26.8672 28.0002 24.0154 28.0002C20.1846 28.0002 19.1692 25.7003 19 25.2879Z" fill="#3E3E3E"></path>
-                        <path d="M9 25.5587L11.1487 24.1953C11.317 24.7026 11.9713 25.638 12.9205 25.638C13.8698 25.638 14.3557 24.663 14.3557 24.1953V15.0002H16.9982V24.1953C17.041 25.4636 16.3376 28.0002 13.2332 28.0002C10.379 28.0002 9.19242 26.3039 9 25.5587Z" fill="#3E3E3E"></path>
-                    </svg>
-
-                    <h4 class="font-semibold text-gray-800 group-hover:text-primary">JavaScript</h4>
+                
+                <!-- Web Technologies -->
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-cyan-500 to-cyan-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-laptop-code text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4">Web Technologies</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fab fa-php text-purple-600 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">PHP</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fab fa-js text-yellow-500 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">JavaScript</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fab fa-html5 text-orange-600 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">HTML</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fas fa-wind text-cyan-500 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">Tailwind CSS</p>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- PHP -->
-                <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition group">
-                    <svg class="w-10 h-10 mx-auto mb-3 text-[#F7DF1E]" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 32 32" fill="none">
-                        <circle cx="16" cy="16" r="14" fill="#8892BF"></circle>
-                        <path d="M14.4392 10H16.1192L15.6444 12.5242H17.154C17.9819 12.5419 18.5986 12.7269 19.0045 13.0793C19.4184 13.4316 19.5402 14.1014 19.3698 15.0881L18.5541 19.4889H16.8497L17.6288 15.2863C17.7099 14.8457 17.6856 14.533 17.5558 14.348C17.426 14.163 17.146 14.0705 16.7158 14.0705L15.3644 14.0573L14.3661 19.4889H12.6861L14.4392 10Z" fill="white"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.74092 12.5243H10.0036C10.9612 12.533 11.6552 12.8327 12.0854 13.4229C12.5156 14.0132 12.6576 14.8193 12.5115 15.8414C12.4548 16.3085 12.3289 16.7665 12.1341 17.2159C11.9474 17.6652 11.6878 18.0704 11.355 18.4317C10.9491 18.8898 10.5149 19.1805 10.0523 19.304C9.58969 19.4274 9.11076 19.489 8.61575 19.489H7.15484L6.69222 22H5L6.74092 12.5243ZM7.43485 17.9956L8.16287 14.0441H8.40879C8.49815 14.0441 8.5914 14.0396 8.6888 14.0309C9.33817 14.0221 9.87774 14.0882 10.308 14.2291C10.7462 14.37 10.8923 14.9031 10.7462 15.8282C10.5678 16.9296 10.2186 17.5727 9.69926 17.7577C9.1799 17.934 8.53053 18.0176 7.75138 18.0088H7.58094C7.53224 18.0088 7.48355 18.0043 7.43485 17.9956Z" fill="white"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M24.4365 12.5243H21.1738L19.4329 22H21.1251L21.5878 19.489H23.0487C23.5437 19.489 24.0226 19.4274 24.4852 19.304C24.9479 19.1805 25.382 18.8898 25.7879 18.4317C26.1207 18.0704 26.3803 17.6652 26.567 17.2159C26.7618 16.7665 26.8877 16.3085 26.9444 15.8414C27.0905 14.8193 26.9486 14.0132 26.5183 13.4229C26.0881 12.8327 25.3942 12.533 24.4365 12.5243ZM22.5958 14.0441L21.8678 17.9956C21.9165 18.0043 21.9652 18.0088 22.0139 18.0088H22.1843C22.9635 18.0176 23.6128 17.934 24.1322 17.7577C24.6515 17.5727 25.0007 16.9296 25.1792 15.8282C25.3253 14.9031 25.1792 14.37 24.7409 14.2291C24.3107 14.0882 23.7711 14.0221 23.1217 14.0309C23.0243 14.0396 22.9311 14.0441 22.8417 14.0441H22.5958Z" fill="white"></path>
-                    </svg>
-                    
-
-                    <h4 class="font-semibold text-gray-800 group-hover:text-primary">PHP</h4>
+                
+                <!-- Infrastructure & Tools -->
+                <div class="text-center">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-server text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark mb-4">Infrastructure & Tools</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fas fa-database text-green-600 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">Supabase</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fas fa-fire text-orange-500 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">Firebase</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fas fa-network-wired text-blue-600 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">Networks</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <i class="fab fa-microsoft text-blue-500 text-2xl mb-2"></i>
+                            <p class="font-semibold text-slate-800">MS Office</p>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Database -->
-                <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition group">
-                    <svg class="w-10 h-10 mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
-                        <path style="fill:#7DD2F0;" d="M429.821,444.23c0,37.428-77.823,67.77-173.823,67.77S82.173,481.658,82.173,444.23V318.744H429.82  V444.23H429.821z"></path>
-                        <path style="fill:#6AB2CC;" d="M429.821,318.744c0,37.428-77.823,67.77-173.823,67.77s-173.824-30.342-173.824-67.77V193.256H429.82  v125.487H429.821z"></path>
-                        <path style="fill:#7DD2F0;" d="M429.821,193.256c0,37.428-77.823,67.77-173.823,67.77s-173.824-30.342-173.824-67.77V67.77H429.82  v125.486H429.821z"></path>
-                        <ellipse style="fill:#A6E8FF;" cx="256.001" cy="67.768" rx="173.827" ry="67.768"></ellipse>
-                        <g>
-                            <circle style="fill:#B9FF8C;" cx="286.518" cy="192.652" r="14.838"></circle>
-                            <circle style="fill:#B9FF8C;" cx="341.166" cy="184.154" r="14.838"></circle>
-                            <circle style="fill:#B9FF8C;" cx="392.663" cy="168.62" r="14.838"></circle>
-                            <circle style="fill:#B9FF8C;" cx="286.518" cy="319.236" r="14.838"></circle>
-                            <circle style="fill:#B9FF8C;" cx="341.166" cy="310.738" r="14.838"></circle>
-                            <circle style="fill:#B9FF8C;" cx="392.663" cy="295.203" r="14.838"></circle>
-                            <circle style="fill:#B9FF8C;" cx="286.518" cy="443.644" r="14.838"></circle>
-                            <circle style="fill:#B9FF8C;" cx="341.166" cy="435.146" r="14.838"></circle>
-                            <circle style="fill:#B9FF8C;" cx="392.663" cy="419.622" r="14.838"></circle>
-                        </g>
-                    </svg>
-                    <h4 class="font-semibold text-gray-800 group-hover:text-primary">Database</h4>
-                </div>
-
-                <!-- Network Admin -->
-                <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition group">
-                    <svg class="w-10 h-10 mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
-                        <g>
-                            <g>
-                                <path style="fill:#42B05C;" d="M102.4,238.933c-4.71,0-8.533-3.814-8.533-8.533v-42.667c0-4.719,3.823-8.533,8.533-8.533    c4.71,0,8.533,3.814,8.533,8.533V230.4C110.933,235.119,107.11,238.933,102.4,238.933"></path>
-                                <path style="fill:#42B05C;" d="M409.6,238.933c-4.71,0-8.533-3.814-8.533-8.533v-42.667c0-4.719,3.823-8.533,8.533-8.533    c4.71,0,8.533,3.814,8.533,8.533V230.4C418.133,235.119,414.31,238.933,409.6,238.933"></path>
-                                <path style="fill:#42B05C;" d="M256,332.792c-4.71,0-8.533-3.814-8.533-8.533V281.6c0-4.719,3.823-8.533,8.533-8.533    c4.71,0,8.533,3.814,8.533,8.533v42.658C264.533,328.977,260.71,332.792,256,332.792"></path>
-                            </g>
-                            <path style="fill:#E8EDEE;" d="M190.949,153.6H22.381c-7.646,0-13.85-6.204-13.85-13.85V22.383c0-7.646,6.204-13.85,13.85-13.85   h168.567c7.646,0,13.85,6.204,13.85,13.85V139.75C204.798,147.396,198.595,153.6,190.949,153.6"></path>
-                            <path style="fill:#B0B6BB;" d="M142.918,187.733H61.885c-5.905,0-10.684-4.779-10.684-10.684V153.6h102.4v23.45   C153.602,182.955,148.815,187.733,142.918,187.733"></path>
-                            <path style="fill:#E8EDEE;" d="M489.615,153.6H321.048c-7.646,0-13.85-6.204-13.85-13.85V22.383c0-7.646,6.204-13.85,13.85-13.85   h168.567c7.646,0,13.85,6.204,13.85,13.85V139.75C503.465,147.396,497.261,153.6,489.615,153.6"></path>
-                            <g>
-                                <path style="fill:#38454F;" d="M341.333,110.577V51.552c0-4.907,3.977-8.883,8.892-8.883h110.217c4.915,0,8.892,3.977,8.892,8.883    v59.025c0,4.907-3.977,8.892-8.892,8.892H350.225C345.31,119.469,341.333,115.484,341.333,110.577"></path>
-                                <path style="fill:#38454F;" d="M42.667,110.577V51.552c0-4.907,3.977-8.883,8.892-8.883h110.217c4.915,0,8.892,3.977,8.892,8.883    v59.025c0,4.907-3.977,8.892-8.892,8.892H51.558C46.643,119.469,42.667,115.484,42.667,110.577"></path>
-                            </g>
-                            <path style="fill:#E8EDEE;" d="M344.549,469.333H175.981c-7.646,0-13.85-6.204-13.85-13.85V338.116   c0-7.646,6.204-13.85,13.85-13.85h168.567c7.646,0,13.85,6.204,13.85,13.85v117.367   C358.398,463.13,352.195,469.333,344.549,469.333"></path>
-                            <path style="fill:#B0B6BB;" d="M296.518,503.467h-81.033c-5.905,0-10.684-4.779-10.684-10.684v-23.45h102.4v23.45   C307.202,498.688,302.415,503.467,296.518,503.467"></path>
-                            <path style="fill:#38454F;" d="M196.267,426.311v-59.025c0-4.907,3.977-8.883,8.892-8.883h110.217c4.915,0,8.892,3.977,8.892,8.883   v59.025c0,4.907-3.977,8.892-8.892,8.892H205.158C200.243,435.203,196.267,431.217,196.267,426.311"></path>
-                            <path style="fill:#B0B6BB;" d="M450.118,187.733h-81.033c-5.905,0-10.684-4.779-10.684-10.684V153.6h102.4v23.45   C460.802,182.955,456.015,187.733,450.118,187.733"></path>
-                            <g>
-                                <path style="fill:#42B05C;" d="M76.8,264.533H8.533C3.823,264.533,0,260.719,0,256c0-4.719,3.823-8.533,8.533-8.533H76.8    c4.71,0,8.533,3.814,8.533,8.533C85.333,260.719,81.51,264.533,76.8,264.533"></path>
-                                <path style="fill:#42B05C;" d="M230.4,264.533H128c-4.71,0-8.533-3.814-8.533-8.533c0-4.719,3.823-8.533,8.533-8.533h102.4    c4.71,0,8.533,3.814,8.533,8.533C238.933,260.719,235.11,264.533,230.4,264.533"></path>
-                                <path style="fill:#42B05C;" d="M384,264.533H281.6c-4.71,0-8.533-3.814-8.533-8.533c0-4.719,3.823-8.533,8.533-8.533H384    c4.71,0,8.533,3.814,8.533,8.533C392.533,260.719,388.71,264.533,384,264.533"></path>
-                                <path style="fill:#42B05C;" d="M503.467,264.533H435.2c-4.71,0-8.533-3.814-8.533-8.533c0-4.719,3.823-8.533,8.533-8.533h68.267    c4.71,0,8.533,3.814,8.533,8.533C512,260.719,508.177,264.533,503.467,264.533"></path>
-                            </g>
-                            <g>
-                                <path style="fill:#DD342E;" d="M128,256c0,14.14-11.46,25.6-25.6,25.6S76.8,270.14,76.8,256c0-14.14,11.46-25.6,25.6-25.6    S128,241.86,128,256"></path>
-                                <path style="fill:#DD342E;" d="M281.6,256c0,14.14-11.46,25.6-25.6,25.6c-14.14,0-25.6-11.46-25.6-25.6    c0-14.14,11.46-25.6,25.6-25.6C270.14,230.4,281.6,241.86,281.6,256"></path>
-                                <path style="fill:#DD342E;" d="M435.2,256c0,14.14-11.46,25.6-25.6,25.6c-14.14,0-25.6-11.46-25.6-25.6    c0-14.14,11.46-25.6,25.6-25.6C423.74,230.4,435.2,241.86,435.2,256"></path>
-                            </g>
-                        </g>
-                    </svg>
-
-                    <h4 class="font-semibold text-gray-800 group-hover:text-primary">Network</h4>
-                </div>
-
-                <!-- MS Office -->
-                <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition group">
-                    <svg class="w-24 h-16 mx-auto" xmlns="http://www.w3.org/2000/svg" width="800px" height="500px" viewBox="0.497 -67.31899999999999 198.998 198.998">
-
-                        <g fill="#eb3c00">
-
-                        <path d="M.496 51.61V13.094L34.568.502l18.517 5.924v51.85l-18.517 5.582L.496 51.61l34.072 4.1V10.873l-22.221 5.185v30.369L.497 51.61zM89.373 51.88c-5.362 0-9.658-1.769-12.885-5.304-3.228-3.533-4.84-8.133-4.84-13.796 0-6.084 1.644-10.938 4.932-14.56 3.288-3.622 7.764-5.433 13.425-5.433 5.223 0 9.43 1.759 12.622 5.275 3.192 3.518 4.788 8.116 4.788 13.796 0 6.172-1.637 11.051-4.907 14.64-3.27 3.589-7.647 5.381-13.135 5.381zm.316-35.083c-3.974 0-7.2 1.434-9.68 4.3-2.48 2.866-3.72 6.63-3.72 11.289s1.21 8.41 3.627 11.25 5.57 4.26 9.456 4.26c4.149 0 7.421-1.354 9.812-4.062 2.391-2.708 3.588-6.497 3.588-11.368 0-4.995-1.162-8.854-3.483-11.58-2.319-2.725-5.52-4.09-9.6-4.09zM123.177 10.675c-2.445 0-4.476.833-6.11 2.477-1.635 1.643-2.454 3.881-2.454 6.712v4.376h-4.606v3.703h4.606V51.25h4.306V27.943h10.53V51.25h4.306V27.943h6.32V24.24h-6.32v-4.167c0-3.815 1.513-5.716 4.537-5.716 1.073 0 2.027.22 2.87.694v-3.888c-.773-.316-1.806-.487-3.124-.487-2.445 0-4.499.834-6.134 2.477-1.636 1.644-2.454 3.882-2.454 6.712v4.376h-10.531v-4.166c0-3.816 1.51-5.717 4.536-5.717 1.072 0 2.026.22 2.87.694v-3.888c-.774-.319-1.829-.489-3.148-.489zM146.365 17.375a2.743 2.743 0 0 1-1.979-.792c-.545-.528-.818-1.195-.818-2.004s.273-1.481.818-2.017a2.717 2.717 0 0 1 1.979-.805c.791 0 1.463.267 2.018.805.555.536.83 1.208.83 2.017a2.67 2.67 0 0 1-.83 1.979c-.554.544-1.227.817-2.018.817zm2.11 33.867h-4.326v-27.01h4.325v27.01zM173.051 50.003c-2.074 1.248-4.538 1.873-7.385 1.873-3.851 0-6.959-1.253-9.323-3.76s-3.55-5.753-3.55-9.746c0-4.45 1.275-8.023 3.825-10.722 2.551-2.7 5.953-4.049 10.209-4.049 2.372 0 4.466.44 6.277 1.32v4.43c-2.004-1.406-4.15-2.11-6.435-2.11-2.762 0-5.026.99-6.794 2.968-1.767 1.979-2.65 4.576-2.65 7.794 0 3.166.83 5.663 2.491 7.492 1.663 1.828 3.89 2.742 6.688 2.742 2.355 0 4.573-.783 6.647-2.347v4.115zM199.494 38.82h-19.07c.07 3.006.879 5.327 2.425 6.963 1.55 1.634 3.676 2.452 6.385 2.452 3.042 0 5.839-1.002 8.387-3.007v4.062c-2.373 1.723-5.512 2.585-9.416 2.585-3.816 0-6.815-1.226-8.994-3.68-2.181-2.454-3.271-5.903-3.271-10.353 0-4.203 1.191-7.628 3.573-10.275 2.383-2.647 5.342-3.969 8.876-3.969s6.269 1.143 8.203 3.429c1.934 2.286 2.9 5.46 2.9 9.522v2.27zm-4.43-3.667c-.018-2.497-.62-4.44-1.808-5.829-1.187-1.39-2.836-2.084-4.945-2.084-2.041 0-3.772.731-5.197 2.19-1.424 1.46-2.303 3.368-2.636 5.723h14.585z"></path>
-
-                        </g>
-
-                    </svg>
-
-                    <h4 class="font-semibold text-gray-800 group-hover:text-primary">MS Office</h4>
-                </div>
-
-                <!-- IT Support -->
-                <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition group">
-                    <svg class="w-10 h-10 mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 120 120" id="Layer_1" version="1.1" xml:space="preserve">
-
-                        <style type="text/css">
-                            .st0{fill:#FF8C59;}
-                            .st1{fill:#FFD551;}
-                            .st2{fill:#EDBF9A;}
-                            .st3{fill:#FFD9B6;}
-                            .st4{fill:#EF8156;}
-                            .st5{fill:#F9CD53;}
-                        </style>
-
-                        <g>
-
-                        <path class="st0" d="M102.3,101.7H23.2V79.8c0-5.1,3.7-9.6,9.1-11.3l22.7-6.9c5.1-1.6,10.4-1.6,15.3,0l22.7,6.9   c5.4,1.7,9.1,6.2,9.1,11.3L102.3,101.7L102.3,101.7z"></path>
-
-                        <rect class="st1" height="2.9" width="13.2" x="66" y="88.6"></rect>
-
-                        <rect class="st2" height="23.3" width="16.7" x="54.4" y="47.8"></rect>
-
-                        <path class="st3" d="M81.7,34.9C81.2,22.9,73,15.6,62.8,15.6c-10.2,0-18.5,7.4-19,19.3c-1.5,0.3-2.7,1.5-2.7,3.5   c0,2.2,1.5,4.5,3.3,4.5c0,0,0.1,0,0.1,0c2.3,10.3,9.7,19.3,18.3,19.3c8.6,0,15.9-8.9,18.2-19.3c0.1,0,0.2,0,0.2,0   c1.8,0,3.3-2.3,3.3-4.5C84.6,36.4,83.3,35.1,81.7,34.9z"></path>
-
-                        <g>
-
-                        <path class="st4" d="M41.4,88.6h-0.6c-0.6,0-1.1,0.4-1.1,1.1v11.9h2.9V89.8C42.5,89.1,42,88.6,41.4,88.6z"></path>
-
-                        <path class="st4" d="M84.8,88.6h-0.6c-0.6,0-1.1,0.4-1.1,1.1v11.9H86V89.8C85.9,89.1,85.5,88.6,84.8,88.6z"></path>
-
-                        <polygon class="st4" points="71.2,63.3 62.8,70.8 54.4,63.3 53.2,62.2 44.3,64.9 57.5,76.8 62.8,71.1 68,76.8 81.4,64.9     72.4,62.2   "></polygon>
-
-                        </g>
-
-                        <path class="st1" d="M51.6,93.6v-5.1c0-0.6-0.4-1-1-1h-2.1c-0.3-1.3-0.9-2.5-1.5-3.6l1.5-1.5c0.4-0.4,0.4-1.1,0-1.5l-3.6-3.6   c-0.4-0.4-1.1-0.4-1.5,0l-1.5,1.5c-1.2-0.7-2.4-1.2-3.7-1.6V75c0-0.6-0.4-1-1-1H32c-0.6,0-1,0.4-1,1v2.1c-1.3,0.3-2.5,0.9-3.6,1.6   l-1.5-1.5c-0.4-0.4-1.1-0.4-1.5,0l-3.6,3.6c-0.4,0.4-0.4,1.1,0,1.5l1.5,1.5c-0.7,1.2-1.2,2.4-1.5,3.6h-2.1c-0.6,0-1,0.4-1,1v5.1   c0,0.6,0.4,1,1,1h2c0.3,1.3,0.9,2.5,1.5,3.6l-1.5,1.5c-0.4,0.4-0.4,1.1,0,1.5l3.6,3.6c0.4,0.4,1.1,0.4,1.5,0l1.5-1.5   c1.2,0.7,2.4,1.2,3.6,1.5v2.1c0,0.6,0.4,1,1,1h5.1c0.6,0,1-0.4,1-1v-2.1c1.3-0.3,2.5-0.9,3.6-1.5l1.5,1.5c0.4,0.4,1.1,0.4,1.5,0   l3.6-3.6c0.4-0.4,0.4-1.1,0-1.5l-1.5-1.5c0.7-1.2,1.2-2.4,1.5-3.6h2.2C51,94.6,51.6,94.2,51.6,93.6z M35.1,98.9   c-4.8,0.3-8.7-3.6-8.4-8.4c0.2-3.9,3.4-7.1,7.4-7.4c4.8-0.3,8.7,3.6,8.4,8.4C42.2,95.5,39,98.7,35.1,98.9z"></path>
-
-                        <path class="st1" d="M76.3,15.3l-8.8-2.5c-2.9-0.8-6-0.8-8.9,0l-9.2,2.6c-2.1,0.6-3.6,2.4-3.9,4.6l-1.8,12.7l18.4,1.1   c0.5,0,0.9,0,1.4,0l18.4-1.1l-1.8-12.8C79.9,17.7,78.3,15.9,76.3,15.3z"></path>
-
-                        <path class="st1" d="M76.7,40.2l-8.6-1.5c-3.5-0.6-7.1-0.6-10.6,0L49,40.2c-1.8,0-3.6-1-4.6-2.6l-0.7-4.9l17.9,1.1   c0.8,0.1,1.6,0.1,2.4,0l17.9-1.1l-0.7,4.9C80.3,39.2,78.6,40.2,76.7,40.2z"></path>
-
-                        <path class="st5" d="M66.6,32.9c-2.4-0.2-4.8-0.2-7.2,0l-15.3,2l-0.1-1.2l15.5-2c2.4-0.1,4.8-0.1,7.2,0l15.2,2l-0.2,1.2L66.6,32.9z   "></path>
-
-                        </g>
-
-                    </svg>
-
-                    <h4 class="font-semibold text-gray-800 group-hover:text-primary">IT Support</h4>
-                </div>
-
-                <!-- AI/ML -->
-                <div class="bg-gray-50 p-4 md:p-6 rounded-lg text-center border border-gray-200 hover:border-primary transition group">
-                    <svg class="w-10 h-10 mx-auto mb-3" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 200 200">
-                        <title>artificial intelligence</title>
-                        <path d="M106,27A23,23,0,1,0,62.45,37.33a18.45,18.45,0,0,0-9-2.33c-11,0-20,9.85-20,22a23.09,23.09,0,0,0,5.81,15.5A19.12,19.12,0,0,0,35,72c-12.7,0-23,12.54-23,28s10.3,28,23,28a19.12,19.12,0,0,0,4.31-.5A23.09,23.09,0,0,0,33.5,143c0,12.15,9,22,20,22a18.45,18.45,0,0,0,9-2.33A23,23,0,1,0,106,173c0-.34,0-0.67,0-1h0V28h0C106,27.67,106,27.34,106,27Z" fill="none" stroke="#220728" stroke-linejoin="bevel" stroke-width="8"></path>
-                        <path d="M67.26,189.26a23,23,0,0,0,32.53-32.53H86.9" fill="none" stroke="#220728" stroke-miterlimit="10" stroke-width="8"></path>
-                        <path d="M66.26,10.74A23,23,0,0,1,98.79,43.26H87.67" fill="none" stroke="#220728" stroke-miterlimit="10" stroke-width="8"></path>
-                        <polyline points="106 95 81 95 49.25 124.76" fill="none" stroke="#220728" stroke-miterlimit="10" stroke-width="8"></polyline>
-                        <line x1="44.97" y1="86.65" x2="62.45" y2="111.44" fill="none" stroke="#220728" stroke-miterlimit="10" stroke-width="8"></line>
-                        <line x1="62.45" y1="162.67" x2="74.5" y2="146" fill="none" stroke="#220728" stroke-miterlimit="10" stroke-width="8"></line>
-                        <polyline points="62.45 37.49 71 51 71 71" fill="none" stroke="#220728" stroke-miterlimit="10" stroke-width="8"></polyline>
-                        <line x1="152" y1="100" x2="104" y2="100" fill="none" stroke="#220728" stroke-miterlimit="10" stroke-width="8"></line>
-                        <polyline points="107 131 131 131 143 152.67" fill="none" stroke="#220728" stroke-miterlimit="10" stroke-width="8"></polyline>
-                        <polyline points="107 70 131 70 143 48.33" fill="none" stroke="#220728" stroke-miterlimit="10" stroke-width="8"></polyline>
-                        <circle cx="171" cy="100" r="16" fill="none" stroke="#ffc548" stroke-miterlimit="10" stroke-width="8"></circle>
-                        <circle cx="149" cy="170" r="16" fill="none" stroke="#ffc548" stroke-miterlimit="10" stroke-width="8"></circle>
-                        <circle cx="149" cy="30" r="16" fill="none" stroke="#ffc548" stroke-miterlimit="10" stroke-width="8"></circle>
-                    </svg>
-                    <h4 class="font-semibold text-gray-800 group-hover:text-primary">AI/ML</h4>
+            </div>
+            
+            <!-- Additional Skills -->
+            <div class="mt-16 text-center">
+                <h3 class="text-xl font-semibold text-slate-800 mb-6">Additional Expertise</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">Machine Learning</span>
+                    <span class="bg-pink-100 text-pink-800 px-4 py-2 rounded-full font-medium">Deep Learning</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">SEO Optimization</span>
+                    <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-full font-medium">Database Admin</span>
+                    <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-medium">System Admin</span>
+                    <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full font-medium">IT Hardware Support</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project Mila Website -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-                        <i class="fas fa-laptop-code text-6xl text-white"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Project Mila Website</h3>
-                        <p class="text-gray-600 mb-4">Complete redesign and development of Project Mila's WordPress website with performance optimization.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">PHP</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">JavaScript</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">WordPress</span>
+    <section id="projects" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-dark mb-4">Featured Projects</h2>
+                <p class="text-lg sm:text-xl text-muted max-w-3xl mx-auto">
+                    A showcase of my recent work and technical capabilities
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                <!-- Project Mila -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 sm:p-8 rounded-2xl border border-blue-200 card-hover">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="bg-primary text-white p-3 sm:p-4 rounded-2xl w-fit">
+                            <i class="fas fa-mobile-alt text-xl sm:text-2xl"></i>
                         </div>
-                        <a href="https://projectmila.com/" target="_blank" class="text-primary font-medium hover:underline">View Project →</a>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Web Development</span>
                     </div>
+                    
+                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Project Mila Website</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Complete redesign and development of Project Mila's website with dramatic performance improvements. 
+                        Enhanced accessibility, SEO, and user experience through modern web technologies.
+                    </p>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-slate-800 mb-3 text-lg">Key Results:</h4>
+                        <div class="grid grid-cols-1 xs:grid-cols-2 gap-4 key-results-grid">
+                            <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                                <div class="text-green-600 font-bold text-xl">90%+</div>
+                                <div class="text-green-800 text-sm">PageSpeed Score</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                <div class="text-blue-600 font-bold text-xl">44% → 90%</div>
+                                <div class="text-blue-800 text-sm">Performance Boost</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-slate-800 mb-3 text-lg">Technologies Used:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">PHP</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                            <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">WordPress</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">SEO</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://projectmila.com/" target="_blank" 
+                       class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl">
+                        View Live Site
+                        <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
                 </div>
                 
-                <!-- Flutter E-commerce App -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                    <div class="h-48 bg-gradient-to-r from-accent to-green-500 flex items-center justify-center">
-                        <i class="fas fa-mobile-alt text-6xl text-white"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Flutter E-commerce App</h3>
-                        <p class="text-gray-600 mb-4">Developing a Flutter-based e-commerce app with GetX, BLoC, and Supabase, integrating ML/DL techniques.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Flutter</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Dart</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">GetX</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">BLoC</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Supabase</span>
-                            <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">Machine Learning</span>
+                <!-- Wigachu E-commerce App -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 card-hover h-full flex flex-col">
+                    <img src="assets\images\wigachu_official_logo.png" alt="Wigachu Logo" class="h-52 sm:h-64 mx-auto">
+                    <div class="p-6 sm:p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-dark">Wigachu</h3>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Mobile App</span>
                         </div>
-                        <a href="#contact" class="text-primary font-medium hover:underline">Coming Soon →</a>
+                        
+                        <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
+                            Engineered a full-featured Flutter e-commerce application with a focus on user experience and performance
+                        </p>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-slate-800 mb-3 text-lg">Features:</h4>
+                            <ul class="space-y-2 text-slate-600">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Implemented end-to-end user authentication and management with Supabase</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Employed for efficient state management, routing, and dependency injection to ensure app-wide performance and scalability with GetX</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                    <span>Designed and built a polished, intuitive user interface that prioritizes usability and aesthetic appeal.</span>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-slate-800 mb-3 text-lg">Technologies Used:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Flutter</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Dart</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">GetX</span>
+                                <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Supabase</span>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1FNoNhq0xZPz6FpnubCh6cn5cqtma_f5S/view?usp=sharing" 
+                        class="inline-flex items-center bg-success text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Download APK
+                            <i class="fas fa-download ml-2"></i>
+                        </a>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12 text-dark">Get In Touch</h2>
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2">
-                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
-                    <p class="text-gray-700 mb-6">Feel free to reach out to me for job opportunities, collaborations, or just to say hello!</p>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-envelope text-primary mt-1 mr-4"></i>
+     <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Let's Work Together</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to bring your next project to life? Let's discuss how I can help you achieve your goals.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-dark mb-6">Get In Touch</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            Available for immediate hire! Whether you need a full-stack developer, 
+                            mobile app development, or IT solutions, I'm here to help bring your vision to reality.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center group hover-lift bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-xl">
+                            <div class="bg-primary/10 p-4 rounded-xl mr-6 group-hover:bg-primary/20 transition duration-300">
+                                <i class="fas fa-envelope text-primary text-xl"></i>
+                            </div>
                             <div>
-                                <h4 class="font-medium">Email</h4>
-                                <a href="mailto:briankebabe00@gmail.com" class="text-gray-600 hover:text-primary hover:underline">briankebabe00@gmail.com</a>
+                                <h4 class="font-semibold text-dark mb-1">Email Address</h4>
+                                <a href="mailto:briankebabe00@gmail.com" class="text-primary hover:underline font-medium">briankebabe00@gmail.com</a>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-phone-alt text-primary mt-1 mr-4"></i>
+
+                        <div class="flex items-center group hover-lift bg-gradient-to-r from-accent/5 to-cyan-500/5 p-6 rounded-xl">
+                            <div class="bg-accent/10 p-4 rounded-xl mr-6 group-hover:bg-accent/20 transition duration-300">
+                                <i class="fas fa-phone-alt text-accent text-xl"></i>
+                            </div>
                             <div>
-                                <h4 class="font-medium">Phone</h4>
-                                <a href="tel:+254748251265" class="text-gray-600 hover:text-primary hover:underline">+254 748 251 265</a>
+                                <h4 class="font-semibold text-dark mb-1">Phone Number</h4>
+                                <a href="tel:+254748251265" class="text-accent hover:underline font-medium">+254 748 251 265</a>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-4"></i>
+
+                        <div class="flex items-center group hover-lift bg-gradient-to-r from-success/5 to-emerald-500/5 p-6 rounded-xl">
+                            <div class="bg-success/10 p-4 rounded-xl mr-6 group-hover:bg-success/20 transition duration-300">
+                                <i class="fas fa-map-marker-alt text-success text-xl"></i>
+                            </div>
                             <div>
-                                <h4 class="font-medium">Location</h4>
-                                <p class="text-gray-600">Mombasa, Kenya</p>
+                                <h4 class="font-semibold text-dark mb-1">Location</h4>
+                                <p class="text-success font-medium">Mombasa, Kenya</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="mt-8">
-                        <h4 class="font-medium mb-4">Connect with me</h4>
+
+                    <!-- Social Links -->
+                    <div class="pt-8">
+                        <h4 class="font-semibold text-dark mb-4">Connect with me</h4>
                         <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
-                                <i class="fab fa-linkedin-in"></i>
+                            <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" target="_blank" class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white hover:shadow-lg transition duration-300">
+                                <i class="fab fa-linkedin-in text-lg"></i>
                             </a>
-                            <a href="https://github.com/briankebabe" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
-                                <i class="fab fa-github"></i>
+                            <a href="https://github.com/briankebabe" target="_blank" class="w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center text-white hover:shadow-lg transition duration-300">
+                                <i class="fab fa-github text-lg"></i>
                             </a>
-                            <a href="#" class="bg-gray-100 w-10 h-10 rounded-full flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition">
-                                <i class="fab fa-twitter"></i>
+                            <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center text-white hover:shadow-lg transition duration-300">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="https://briankebabe.github.io/" target="_blank" class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white hover:shadow-lg transition duration-300">
+                                <i class="fas fa-globe text-lg"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="md:w-1/2">
-                    <form 
-                    action="https://formspree.io/f/meozzdqe" 
-                    method="POST"
-                    class="space-y-4"
-                >
-                    <!-- Name Field -->
-                    <div>
-                        <label for="name" class="block text-gray-700 mb-1">Name*</label>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            name="name"
-                            required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+
+                <!-- Contact Form -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl">
+                    <form action="https://formspree.io/f/meozzdqe" method="POST" class="space-y-6" id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input 
+                                    type="text" 
+                                    id="name" 
+                                    name="name"
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
+                                    placeholder="Your full name"
+                                >
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="_replyto"
+                                    required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
+                                    placeholder="your.email@example.com"
+                                >
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                name="_subject"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
+                                placeholder="What's this about?"
+                            >
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea 
+                                id="message" 
+                                name="message"
+                                rows="6"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300 resize-none"
+                                placeholder="Tell me about your project or just say hello..."
+                            ></textarea>
+                        </div>
+
+                        <button 
+                            type="submit" 
+                            class="w-full bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition duration-300 flex items-center justify-center"
                         >
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send Message
+                        </button>
+
+                        <input type="text" name="_gotcha" class="hidden">
+                    </form>
+
+                    <!-- Success/Error Messages -->
+                    <div id="form-success" class="hidden mt-6 p-4 bg-success/10 border border-success/20 text-success rounded-xl">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        Message sent successfully! I'll get back to you soon.
                     </div>
-
-                    <!-- Email Field -->
-                    <div>
-                        <label for="email" class="block text-gray-700 mb-1">Email*</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="_replyto"
-                            required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        >
+                    <div id="form-error" class="hidden mt-6 p-4 bg-red-100 border border-red-200 text-red-700 rounded-xl">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Failed to send message. Please email me directly at 
+                        <a href="mailto:briankebabe00@gmail.com" class="underline font-medium">briankebabe00@gmail.com</a>.
                     </div>
-
-                    <!-- Subject Field -->
-                    <div>
-                        <label for="subject" class="block text-gray-700 mb-1">Subject*</label>
-                        <input 
-                            type="text" 
-                            id="subject" 
-                            name="_subject"
-                            required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        >
-                    </div>
-
-                    <!-- Message Field -->
-                    <div>
-                        <label for="message" class="block text-gray-700 mb-1">Message*</label>
-                        <textarea 
-                            id="message" 
-                            name="message"
-                            rows="4"
-                            required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        ></textarea>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button 
-                        type="submit" 
-                        class="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-secondary transition"
-                    >
-                        Send Message
-                    </button>
-
-                    <!-- Formspree Honeypot (Spam Protection) -->
-                    <input type="text" name="_gotcha" class="hidden">
-                </form>
-
-                <!-- Success Message (Hidden by Default) -->
-                <div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded-lg">
-                    Message sent successfully! I'll get back to you soon.
-                </div>
-
-                <!-- Error Message (Hidden by Default) -->
-                <div id="form-error" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
-                    Failed to send message. Please email me directly at <a href="mailto:briankebabe00@gmail.com" class="underline">briankebabe00@gmail.com</a>.
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <a href="#" class="text-xl font-bold text-white">Brian Kebabe</a>
-                    <p class="text-gray-400 mt-1">Flutter Developer & IT Expert</p>
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="text-2xl font-bold text-gradient mb-4">Brian Kebabe</div>
+                    <p class="text-gray-400 mb-4">Full-Stack Developer & Tech Solutions Specialist</p>
+                    <p class="text-gray-400 text-sm">
+                        Turning innovative ideas into digital reality with cutting-edge technology and creative solutions.
+                    </p>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
-                    <a href="#experience" class="text-gray-400 hover:text-white transition">Experience</a>
-                    <a href="#projects" class="text-gray-400 hover:text-white transition">Projects</a>
-                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#about" class="block text-gray-400 hover:text-primary transition">About Me</a>
+                        <a href="#experience" class="block text-gray-400 hover:text-primary transition">Experience</a>
+                        <a href="#skills" class="block text-gray-400 hover:text-primary transition">Skills</a>
+                        <a href="#projects" class="block text-gray-400 hover:text-primary transition">Projects</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Let's Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/briankebabe" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        <i class="fas fa-envelope mr-2"></i>
+                        briankebabe00@gmail.com
+                    </p>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-400">
-                <p>&copy; <span id="year"></span> Brian Mirieri Kebabe. All rights reserved.</p>
+            
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        &copy; <span id="year"></span> Brian Mirieri Kebabe. All rights reserved.
+                    </p>
+                    <div class="flex items-center space-x-4 text-sm text-gray-400">
+                        <span>Made with <i class="fas fa-heart text-red-500"></i> in Kenya</span>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all">
-        <i class="fas fa-arrow-up"></i>
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-gradient-to-r from-primary to-accent text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:shadow-2xl animate-glow">
+        <i class="fas fa-chevron-up text-lg"></i>
     </button>
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
-    <script>
-        // Simple JavaScript for mobile menu toggle
-        document.getElementById('menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
-    <!-- JavaScript for Form Submission Feedback -->
-    <script>
-        const form = document.querySelector('form');
-        const successMsg = document.getElementById('form-success');
-        const errorMsg = document.getElementById('form-error');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: { 'Accept': 'application/json' }
-                });
-                
-                if (response.ok) {
-                    form.reset();
-                    successMsg.classList.remove('hidden');
-                    errorMsg.classList.add('hidden');
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                successMsg.classList.add('hidden');
-                errorMsg.classList.remove('hidden');
-            }
-        });
-    </script>
 </body>
 </html>
