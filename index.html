@@ -3,218 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Mirieri Kebabe | Full-Stack Developer & Tech Solutions Specialist</title>
-    <meta name="description" content="Portfolio of Brian Mirieri Kebabe, Full-Stack Developer & Tech Solutions Specialist based in Mombasa, Kenya">
+    <title>PesaPad | Simple Bill Tracker for Small Business</title>
+    <meta name="description" content="PesaPad: Free, offline bill tracking for small businesses. Created by Brian Mirieri Kebabe, Flutter Developer in Kenya">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="PesaPad - Bill Tracker for Small Business">
+    <meta property="og:description" content="Track customer bills & payments offline. Free forever. Built with Flutter by Brian Kebabe">
+    <meta property="og:image" content="assets/images/pesapad-og-banner.png"> <!-- ADD THIS IMAGE -->
+    <meta property="og:url" content="https://briankebabe.github.io">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- PesaPad Brand Colors -->
+    <style>
+        .pesapad-gradient { 
+            background: linear-gradient(135deg, #0A8A0A 0%, #065F06 50%, #043D04 100%); 
+        }
+        .pesapad-green { background-color: #0A8A0A; }
+        .text-pesapad { color: #0A8A0A; }
+        .border-pesapad { border-color: #0A8A0A; }
+        .hover-pesapad:hover { background-color: #065F06; }
+        
+        /* PesaPad Logo Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        
+        /* Feature card pulse */
+        @keyframes subtle-pulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(10, 138, 10, 0.1); }
+            50% { box-shadow: 0 10px 30px rgba(10, 138, 10, 0.2); }
+        }
+        .feature-pulse { animation: subtle-pulse 4s ease-in-out infinite; }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
-     <!-- Navigation -->
-    <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200">
+    <!-- Navigation - PesaPad Branded -->
+    <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <!-- Empty div for spacing on mobile -->
-                <div class="flex items-center md:hidden">
-                    <div class="w-6"></div> <!-- Spacer for mobile hamburger alignment -->
-                </div>
-                
-                <!-- Centered navigation for desktop -->
-                <div class="hidden md:flex items-center justify-center flex-1">
-                    <div class="flex items-center space-x-8">
-                        <a href="#home" class="text-slate-700 hover:text-primary transition-colors font-medium">Home</a>
-                        <a href="#about" class="text-slate-700 hover:text-primary transition-colors font-medium">About</a>
-                        <a href="#experience" class="text-slate-700 hover:text-primary transition-colors font-medium">Experience</a>
-                        <a href="#skills" class="text-slate-700 hover:text-primary transition-colors font-medium">Skills</a>
-                        <a href="#projects" class="text-slate-700 hover:text-primary transition-colors font-medium">Projects</a>
-                        <a href="#contact" class="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl font-medium">
-                            Contact Me
-                        </a>
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo + PesaPad Name -->
+                <div class="flex items-center space-x-3">
+                    <div class="pesapad-green w-10 h-10 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-receipt text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-gray-900">PesaPad</span>
+                        <span class="text-xs text-gray-500 block -mt-1">by Brian Kebabe</span>
                     </div>
                 </div>
                 
-                <!-- Hamburger menu for mobile (far right) -->
-                <div class="flex items-center md:hidden">
-                    <button id="menu-btn" class="text-slate-700 hover:text-primary">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#app" class="text-gray-700 hover:text-pesapad transition-colors font-medium">The App</a>
+                    <a href="#creator" class="text-gray-700 hover:text-pesapad transition-colors font-medium">The Creator</a>
+                    <a href="#download" class="pesapad-green text-white px-6 py-2.5 rounded-full hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl font-medium">
+                        <i class="fas fa-download mr-2"></i>Download Free
+                    </a>
                 </div>
                 
-                <!-- Contact button for desktop (right side) -->
-                <div class="hidden md:flex items-center">
-                    <!-- This space intentionally left blank to balance the layout -->
-                </div>
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden text-gray-700 hover:text-pesapad">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
         </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-200">
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
             <div class="px-4 py-4 space-y-3">
-                <a href="#home" class="block py-2 text-slate-700 hover:text-primary font-medium">Home</a>
-                <a href="#about" class="block py-2 text-slate-700 hover:text-primary font-medium">About</a>
-                <a href="#experience" class="block py-2 text-slate-700 hover:text-primary font-medium">Experience</a>
-                <a href="#skills" class="block py-2 text-slate-700 hover:text-primary font-medium">Skills</a>
-                <a href="#projects" class="block py-2 text-slate-700 hover:text-primary font-medium">Projects</a>
-                <a href="#contact" class="block mt-4 bg-primary text-white px-6 py-3 rounded-full text-center hover:bg-secondary font-medium">Contact Me</a>
+                <a href="#app" class="block py-2 text-gray-700 hover:text-pesapad font-medium">The App</a>
+                <a href="#creator" class="block py-2 text-gray-700 hover:text-pesapad font-medium">The Creator</a>
+                <a href="#download" class="block mt-4 pesapad-green text-white px-6 py-3 rounded-full text-center hover:bg-green-700 font-medium">
+                    <i class="fas fa-download mr-2"></i>Download Free
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="gradient-bg text-white py-20 lg:py-32 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/10"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="flex flex-col lg:flex-row items-center justify-between">
-                <div class="lg:w-2/3 mb-12 lg:mb-0">
-                    <div class="mb-6">
-                        <span class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
-                            Available for Immediate Hire
-                        </span>
+    <!-- Hero Section - PesaPad Focus -->
+    <section id="app" class="pt-20 pb-12 lg:pt-28 lg:pb-20 bg-gradient-to-b from-green-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Target User Badge -->
+                    <div class="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <i class="fas fa-store mr-2"></i> Made for Small Business Owners
                     </div>
-                    <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Brian Mirieri <span class="text-accent">Kebabe</span>
+                    
+                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Track Bills. Get Paid.
+                        <span class="text-pesapad block">Simple & Free.</span>
                     </h1>
-                    <h2 class="text-2xl lg:text-3xl font-semibold mb-6 text-blue-100">
-                        Full-Stack Developer & Tech Solutions Specialist
-                    </h2>
-                    <p class="text-xl mb-8 text-blue-100 leading-relaxed max-w-2xl">
-                        Bridging software development and IT infrastructure with 2 years of hands-on experience. 
-                        Bachelor's in Computer Science with expertise in mobile, web, and emerging technologies.
+                    
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        PesaPad helps shop owners, vendors, and freelancers track customer bills and payments 
+                        <span class="font-semibold text-pesapad">100% offline</span>. No internet needed. No monthly fees.
                     </p>
+                    
+                    <!-- Key Selling Points -->
+                    <div class="grid grid-cols-2 gap-4 mb-10">
+                        <div class="flex items-center">
+                            <i class="fas fa-wifi-slash text-pesapad mr-3"></i>
+                            <span class="font-medium">Works Offline</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-lock text-pesapad mr-3"></i>
+                            <span class="font-medium">PIN/Fingerprint Lock</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-mobile-alt text-pesapad mr-3"></i>
+                            <span class="font-medium">21MB Lightweight</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-coins text-pesapad mr-3"></i>
+                            <span class="font-medium">Local Currencies</span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-slate-50 transition-all duration-300 shadow-lg hover:shadow-xl text-center">
-                            Hire Me
+                        <a href="#download" 
+                           class="pesapad-green text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl text-center text-lg">
+                            <i class="fas fa-download mr-2"></i>Download Free APK
                         </a>
-                        <a href="#projects" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all duration-300 text-center">
-                            View My Work
+                        <a href="#demo" 
+                           class="border-2 border-pesapad text-pesapad px-8 py-4 rounded-xl font-semibold hover:bg-green-50 transition-all duration-300 text-center text-lg">
+                            <i class="fas fa-play mr-2"></i>Watch 60-Second Demo
                         </a>
                     </div>
-                </div>
-                <div class="lg:w-1/3 flex justify-center">
-                    <div class="relative">
-                        <div class="w-64 h-64 lg:w-80 lg:h-80 bg-white/20 backdrop-blur-sm rounded-full p-2">
-                            <div class="w-full h-full bg-gradient-to-br from-accent/50 to-primary/50 rounded-full overflow-hidden border-4 border-white/30">
-                                <!-- Replace the src with your actual image URL -->
-                                <img src="assets\images\profile.jpg" 
-                                    alt="Brian Mirieri Kebabe" 
-                                    class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                        <div class="absolute -top-4 -right-4 bg-accent text-white p-3 lg:p-4 rounded-full">
-                            <i class="fas fa-mobile-alt text-xl lg:text-2xl"></i>
-                        </div>
-                        <div class="absolute -bottom-4 -left-4 bg-success text-white p-3 lg:p-4 rounded-full">
-                            <i class="fas fa-database text-xl lg:text-2xl"></i>
-                        </div>
+                    
+                    <!-- Trust Signals -->
+                    <div class="mt-8 flex items-center text-sm text-gray-500">
+                        <i class="fas fa-shield-alt text-green-500 mr-2"></i>
+                        <span>No ads. No hidden costs. Your data stays on your phone.</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="py-12 md:py-16 lg:py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark mb-4">About Me</h2>
-                <div class="w-16 sm:w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4 sm:mb-6"></div>
-                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                    A passionate technologist with a proven track record of delivering exceptional results
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
-                <div>
-                    <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-6 sm:p-8 rounded-2xl">
-                        <h3 class="text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-6">Professional Journey</h3>
-                        <div class="space-y-3 sm:space-y-4 text-gray-700 text-sm sm:text-base">
-                            <p class="leading-relaxed">
-                                A Full-Stack Developer and Tech Solutions Specialist with a 
-                                Bachelor's degree in Computer Science from Maasai Mara University. With 2+ years of 
-                                hands-on experience, I specialize in bridging software development and IT infrastructure.
-                            </p>
-                            <p class="leading-relaxed">
-                                My expertise spans mobile app development with Flutter, web optimization achieving 90%+ 
-                                performance improvements, and comprehensive IT solutions. I'm passionate about solving 
-                                complex technical challenges and delivering scalable solutions.
-                            </p>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4 mt-6 sm:mt-8">
-                            <div class="bg-white p-3 sm:p-4 rounded-xl shadow-sm">
-                                <div class="flex items-center mb-1 sm:mb-2">
-                                    <i class="fas fa-map-marker-alt text-primary mr-2 text-sm sm:text-base"></i>
-                                    <span class="font-semibold text-dark text-sm sm:text-base">Location</span>
-                                </div>
-                                <p class="text-gray-600 text-xs sm:text-sm">Mombasa, Kenya</p>
-                            </div>
-                            <div class="bg-white p-3 sm:p-4 rounded-xl shadow-sm">
-                                <div class="flex items-center mb-1 sm:mb-2">
-                                    <i class="fas fa-graduation-cap text-accent mr-2 text-sm sm:text-base"></i>
-                                    <span class="font-semibold text-dark text-sm sm:text-base">Education</span>
-                                </div>
-                                <p class="text-gray-600 text-xs sm:text-sm">BSc Computer Science</p>
-                            </div>
-                            <div class="bg-white p-3 sm:p-4 rounded-xl shadow-sm">
-                                <div class="flex items-center mb-1 sm:mb-2">
-                                    <i class="fas fa-briefcase text-success mr-2 text-sm sm:text-base"></i>
-                                    <span class="font-semibold text-dark text-sm sm:text-base">Experience</span>
-                                </div>
-                                <p class="text-gray-600 text-xs sm:text-sm">2+ Years</p>
-                            </div>
-                            <div class="bg-white p-3 sm:p-4 rounded-xl shadow-sm">
-                                <div class="flex items-center mb-1 sm:mb-2">
-                                    <i class="fas fa-envelope text-warning mr-2 text-sm sm:text-base"></i>
-                                    <span class="font-semibold text-dark text-sm sm:text-base">Email</span>
-                                </div>
-                                <a href="mailto:briankebabe00@gmail.com" class="text-primary hover:underline text-xs sm:text-sm block truncate">briankebabe00@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-dark mb-6 sm:mb-8">What I Bring to Your Organization</h3>
-                    <div class="space-y-4 sm:space-y-6">
-                        <div class="flex items-start group bg-white p-4 sm:p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
-                            <div class="bg-primary/10 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 group-hover:bg-primary/20 transition duration-300 flex-shrink-0">
-                                <i class="fas fa-brain text-primary text-lg sm:text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark mb-1 sm:mb-2 text-sm sm:text-base">Problem-Solving Mindset</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm">Proven ability to diagnose complex technical issues and implement efficient solutions</p>
+                
+                <!-- App Mockup Image -->
+                <div class="relative">
+                    <div class="relative mx-auto max-w-md">
+                        <!-- Phone Frame -->
+                        <div class="relative bg-gray-900 rounded-[2.5rem] p-4 shadow-2xl">
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-10"></div>
+                            <div class="bg-white rounded-[2rem] overflow-hidden border-8 border-gray-900">
+                                <!-- REPLACE THIS IMAGE: Show PesaPad dashboard screenshot -->
+                                <img src="assets/images/pesapad-demo-dashboard.png" 
+                                     alt="PesaPad App Dashboard" 
+                                     class="w-full h-auto">
                             </div>
                         </div>
                         
-                        <div class="flex items-start group bg-white p-4 sm:p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
-                            <div class="bg-accent/10 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 group-hover:bg-accent/20 transition duration-300 flex-shrink-0">
-                                <i class="fas fa-users text-accent text-lg sm:text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark mb-1 sm:mb-2 text-sm sm:text-base">Leadership & Collaboration</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm">Currently leading development initiatives as a foundational team member</p>
+                        <!-- Floating Stats Badges -->
+                        <div class="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg animate-float">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-pesapad">21MB</div>
+                                <div class="text-xs text-gray-600">App Size</div>
                             </div>
                         </div>
                         
-                        <div class="flex items-start group bg-white p-4 sm:p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
-                            <div class="bg-success/10 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 group-hover:bg-success/20 transition duration-300 flex-shrink-0">
-                                <i class="fas fa-chart-line text-success text-lg sm:text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark mb-1 sm:mb-2 text-sm sm:text-base">Performance Excellence</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm">Achieved 90%+ performance improvements across multiple projects</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start group bg-white p-4 sm:p-6 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md">
-                            <div class="bg-warning/10 p-3 rounded-xl mr-4 group-hover:bg-warning/20 transition duration-300">
-                                <i class="fas fa-rocket text-warning text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-dark mb-1 sm:mb-2 text-sm sm:text-base">Continuous Innovation</h4>
-                                <p class="text-gray-600 text-xs sm:text-sm">Committed to staying current with industry trends and best practices</p>
+                        <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg animate-float" style="animation-delay: 1.5s;">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-pesapad">0$</div>
+                                <div class="text-xs text-gray-600">Cost</div>
                             </div>
                         </div>
                     </div>
@@ -223,547 +181,456 @@
         </div>
     </section>
 
-     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-dark mb-4">Work Experience</h2>
-                <p class="text-xl text-muted">Building solutions across different industries</p>
-            </div>
-            
-            <div class="space-y-8">
-                <!-- Project Mila -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 card-hover">
-                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold text-dark mb-2">Lead Developer</h3>
-                            <h4 class="text-xl text-primary font-semibold mb-3">Project Mila</h4>
-                            <div class="flex flex-wrap items-center gap-4 text-slate-600">
-                                <div class="flex items-center">
-                                    <i class="fas fa-calendar-alt mr-2 text-primary"></i>
-                                    <span>Oct 2023 - July 2025</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-map-marker-alt mr-2 text-primary"></i>
-                                    <span>Mombasa, Kenya</span>
-                                </div>
-                                <span class="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">Senior Level</span>
-                            </div>
+    <!-- Problem/Solution Section -->
+    <section class="py-16 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- The Problem -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-red-100 p-3 rounded-xl mr-4">
+                            <i class="fas fa-exclamation-triangle text-red-600 text-2xl"></i>
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-900">The Paper Receipt Struggle</h3>
                     </div>
-                    
-                    <div class="grid lg:grid-cols-2 gap-8">
-                        <div>
-                            <h5 class="font-semibold text-slate-800 mb-4">Key Achievements:</h5>
-                            <ul class="space-y-3 text-slate-700">
-                                <li class="flex items-start">
-                                    <i class="fas fa-rocket text-success mt-1 mr-3"></i>
-                                    <span>Improved PageSpeed Insights scores from <44% to >90% across all metrics</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-code text-success mt-1 mr-3"></i>
-                                    <span>Complete website redesign using PHP, Tailwind CSS, JavaScript, and HTML</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-slate-800 mb-4">Technologies Used:</h5>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">PHP</span>
-                                <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
-                                <span class="bg-sky-100 text-sky-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Flutter</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Supabase</span>
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Machine Learning</span>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                            <span>"Who owes me money?" – Lost in notebooks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                            <span>Customers forget, you forget – money stays unpaid</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                            <span>No internet in market? No records</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mt-1 mr-3"></i>
+                            <span>Other apps need monthly subscriptions</span>
+                        </li>
+                    </ul>
                 </div>
                 
-                <!-- Metropolitan Hospital -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 card-hover">
-                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
-                        <div>
-                            <h3 class="text-2xl font-bold text-dark mb-2">IT Specialist</h3>
-                            <h4 class="text-xl text-primary font-semibold mb-3">Metropolitan Hospital</h4>
-                            <div class="flex flex-wrap items-center gap-4 text-slate-600">
-                                <div class="flex items-center">
-                                    <i class="fas fa-calendar-alt mr-2 text-primary"></i>
-                                    <span>May 2023 - Aug 2023</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-map-marker-alt mr-2 text-primary"></i>
-                                    <span>Nairobi, Kenya</span>
-                                </div>
-                                <span class="bg-slate-200 text-slate-700 px-3 py-1 rounded-full text-sm font-medium">Internship</span>
-                            </div>
+                <!-- The Solution -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-green-200 feature-pulse">
+                    <div class="flex items-center mb-6">
+                        <div class="pesapad-green p-3 rounded-xl mr-4">
+                            <i class="fas fa-check-circle text-white text-2xl"></i>
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-900">PesaPad Solution</h3>
                     </div>
-                    
-                    <div class="grid lg:grid-cols-2 gap-8">
-                        <div>
-                            <h5 class="font-semibold text-slate-800 mb-4">Responsibilities:</h5>
-                            <ul class="space-y-3 text-slate-700">
-                                <li class="flex items-start">
-                                    <i class="fas fa-tools text-accent mt-1 mr-3"></i>
-                                    <span>Technical support tasks including software installation and troubleshooting</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-phone text-accent mt-1 mr-3"></i>
-                                    <span>Telephone extensions and communication systems management</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-network-wired text-accent mt-1 mr-3"></i>
-                                    <span>Network configuration and infrastructure support</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-chart-line text-accent mt-1 mr-3"></i>
-                                    <span>Contributed to operational efficiency in healthcare environment</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h5 class="font-semibold text-slate-800 mb-4">Skills Developed:</h5>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">IT Support</span>
-                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Network Config</span>
-                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">Problem Solving</span>
-                                <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">Team Collaboration</span>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-pesapad mt-1 mr-3"></i>
+                            <span><strong>See all debts at a glance</strong> – Dashboard shows who owes you</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-pesapad mt-1 mr-3"></i>
+                            <span><strong>Works without internet</strong> – Perfect for markets & remote shops</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-pesapad mt-1 mr-3"></i>
+                            <span><strong>Free forever</strong> – No ads, no subscriptions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-pesapad mt-1 mr-3"></i>
+                            <span><strong>Secure</strong> – Lock with PIN or fingerprint</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-dark mb-4">Technical Expertise</h2>
-                <p class="text-xl text-muted">Comprehensive skill set across multiple domains</p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Mobile Development -->
-                <div class="text-center">
-                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-mobile-alt text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4">Mobile Development</h3>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fab fa-flutter text-blue-500 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">Flutter</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fas fa-code text-blue-600 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">Dart</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fas fa-sitemap text-green-600 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">GetX</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fas fa-cubes text-purple-600 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">BLoC</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Web Technologies -->
-                <div class="text-center">
-                    <div class="bg-gradient-to-br from-cyan-500 to-cyan-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-laptop-code text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4">Web Technologies</h3>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fab fa-php text-purple-600 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">PHP</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fab fa-js text-yellow-500 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">JavaScript</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fab fa-html5 text-orange-600 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">HTML</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fas fa-wind text-cyan-500 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">Tailwind CSS</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Infrastructure & Tools -->
-                <div class="text-center">
-                    <div class="bg-gradient-to-br from-green-500 to-green-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-server text-3xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-dark mb-4">Infrastructure & Tools</h3>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fas fa-database text-green-600 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">Supabase</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fas fa-fire text-orange-500 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">Firebase</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fas fa-network-wired text-blue-600 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">Networks</p>
-                        </div>
-                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                            <i class="fab fa-microsoft text-blue-500 text-2xl mb-2"></i>
-                            <p class="font-semibold text-slate-800">MS Office</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Additional Skills -->
-            <div class="mt-16 text-center">
-                <h3 class="text-xl font-semibold text-slate-800 mb-6">Additional Expertise</h3>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">Machine Learning</span>
-                    <span class="bg-pink-100 text-pink-800 px-4 py-2 rounded-full font-medium">Deep Learning</span>
-                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">SEO Optimization</span>
-                    <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-full font-medium">Database Admin</span>
-                    <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-medium">System Admin</span>
-                    <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full font-medium">IT Hardware Support</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 md:py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-dark mb-4">Featured Projects</h2>
-                <p class="text-lg sm:text-xl text-muted max-w-3xl mx-auto">
-                    A showcase of my recent work and technical capabilities
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-                <!-- Project Mila -->
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 sm:p-8 rounded-2xl border border-blue-200 card-hover">
-                    <div class="flex items-start justify-between mb-6">
-                        <div class="bg-primary text-white p-3 sm:p-4 rounded-2xl w-fit">
-                            <i class="fas fa-mobile-alt text-xl sm:text-2xl"></i>
-                        </div>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Web Development</span>
-                    </div>
-                    
-                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Project Mila Website</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">
-                        Complete redesign and development of Project Mila's website with dramatic performance improvements. 
-                        Enhanced accessibility, SEO, and user experience through modern web technologies.
-                    </p>
-                    
-                    <div class="mb-6">
-                        <h4 class="font-semibold text-slate-800 mb-3 text-lg">Key Results:</h4>
-                        <div class="grid grid-cols-1 xs:grid-cols-2 gap-4 key-results-grid">
-                            <div class="bg-green-50 p-4 rounded-lg border border-green-200">
-                                <div class="text-green-600 font-bold text-xl">90%+</div>
-                                <div class="text-green-800 text-sm">PageSpeed Score</div>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                                <div class="text-blue-600 font-bold text-xl">44% → 90%</div>
-                                <div class="text-blue-800 text-sm">Performance Boost</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <h4 class="font-semibold text-slate-800 mb-3 text-lg">Technologies Used:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">PHP</span>
-                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
-                            <span class="bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">WordPress</span>
-                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">SEO</span>
-                        </div>
-                    </div>
-                    
-                    <a href="https://projectmila.com/" target="_blank" 
-                       class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl">
-                        View Live Site
-                        <i class="fas fa-external-link-alt ml-2"></i>
-                    </a>
-                </div>
-                
-                <!-- Wigachu E-commerce App -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-200 card-hover h-full flex flex-col">
-                    <img src="assets\images\wigachu_official_logo.png" alt="Wigachu Logo" class="h-52 sm:h-64 mx-auto">
-                    <div class="p-6 sm:p-8 flex-grow flex flex-col">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-bold text-dark">Wigachu</h3>
-                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Mobile App</span>
-                        </div>
-                        
-                        <p class="text-slate-600 mb-6 leading-relaxed flex-grow">
-                            Engineered a full-featured Flutter e-commerce application with a focus on user experience and performance
-                        </p>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-semibold text-slate-800 mb-3 text-lg">Features:</h4>
-                            <ul class="space-y-2 text-slate-600">
-                                <li class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span>Implemented end-to-end user authentication and management with Supabase</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span>Employed for efficient state management, routing, and dependency injection to ensure app-wide performance and scalability with GetX</span>
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fas fa-check-circle text-green-500 mr-2"></i>
-                                    <span>Designed and built a polished, intuitive user interface that prioritizes usability and aesthetic appeal.</span>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-semibold text-slate-800 mb-3 text-lg">Technologies Used:</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Flutter</span>
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Dart</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">GetX</span>
-                                <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">Supabase</span>
-                            </div>
-                        </div>
-                        <a href="https://drive.google.com/file/d/1FNoNhq0xZPz6FpnubCh6cn5cqtma_f5S/view?usp=sharing" 
-                        class="inline-flex items-center bg-success text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl">
-                            Download APK
-                            <i class="fas fa-download ml-2"></i>
-                        </a>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark mb-4">Let's Work Together</h2>
-                <div class="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
+    <!-- App Demo/Video Section -->
+    <section id="demo" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">See It In Action</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Ready to bring your next project to life? Let's discuss how I can help you achieve your goals.
+                    Watch how PesaPad transforms bill tracking in 60 seconds
                 </p>
             </div>
+            
+            <!-- Video Container -->
+            <div class="max-w-3xl mx-auto">
+                <div class="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-2xl">
+                    <!-- Video Thumbnail - REPLACE with actual screenshot -->
+                    <div class="aspect-video bg-gray-800 flex items-center justify-center relative">
+                        <img src="assets/images/pesapad-video-thumbnail.png" 
+                             alt="PesaPad App Demo" 
+                             class="w-full h-full object-cover">
+                        
+                        <!-- Play Button Overlay -->
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <button id="play-video" class="pesapad-green w-20 h-20 rounded-full flex items-center justify-center hover:bg-green-700 transition-transform transform hover:scale-110">
+                                <i class="fas fa-play text-white text-2xl ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Caption -->
+                    <div class="p-6 bg-white">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-lg">PesaPad Complete Walkthrough</h4>
+                                <p class="text-gray-600 text-sm mt-1">From adding customers to tracking payments – everything you need to know</p>
+                            </div>
+                            <span class="bg-green-100 text-pesapad px-3 py-1 rounded-full text-sm font-medium">2:30 mins</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Highlights Below Video -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                    <div class="text-center p-6 bg-green-50 rounded-xl">
+                        <div class="pesapad-green w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-plus text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Add Customers</h4>
+                        <p class="text-gray-600 text-sm">Save customer details once, track all their bills</p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-blue-50 rounded-xl">
+                        <div class="pesapad-green w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-file-invoice-dollar text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Create Bills</h4>
+                        <p class="text-gray-600 text-sm">Quick bill creation with amount and description</p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-purple-50 rounded-xl">
+                        <div class="pesapad-green w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Track Payments</h4>
+                        <p class="text-gray-600 text-sm">See who paid, who's pending, and total balances</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Information -->
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="text-2xl font-bold text-dark mb-6">Get In Touch</h3>
-                        <p class="text-gray-600 mb-8 leading-relaxed">
-                            Available for immediate hire! Whether you need a full-stack developer, 
-                            mobile app development, or IT solutions, I'm here to help bring your vision to reality.
+    <!-- Creator Section -->
+    <section id="creator" class="py-20 bg-gradient-to-b from-white to-green-50/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Meet The Creator</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Built by a developer who understands small business needs
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Your Photo & Quick Intro -->
+                <div class="flex flex-col items-center lg:items-start">
+                    <div class="relative mb-8">
+                        <div class="w-64 h-64 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+                            <!-- REPLACE: Your professional photo -->
+                            <img src="assets/images/brian-profile.jpg" 
+                                 alt="Brian Mirieri Kebabe" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-3 -right-3 pesapad-green text-white p-4 rounded-full">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center lg:text-left">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Brian Mirieri Kebabe</h3>
+                        <p class="text-pesapad font-medium mb-4">Flutter Developer & Tech Solutions Specialist</p>
+                        <p class="text-gray-600 mb-6 max-w-md">
+                            I built PesaPad after seeing my family's small shop struggle with paper receipts. 
+                            As a developer from Mombasa, Kenya, I understand the real challenges local businesses face.
                         </p>
+                        
+                        <div class="flex justify-center lg:justify-start space-x-4">
+                            <a href="https://github.com/briankebabe" 
+                               class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center text-white hover:bg-black transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" 
+                               class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white hover:bg-blue-700 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://briankebabe.github.io/" 
+                               class="w-12 h-12 bg-gray-700 rounded-xl flex items-center justify-center text-white hover:bg-gray-800 transition">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                        </div>
                     </div>
-
+                </div>
+                
+                <!-- Why I Built PesaPad -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Why I Built PesaPad</h3>
+                    
                     <div class="space-y-6">
-                        <div class="flex items-center group hover-lift bg-gradient-to-r from-primary/5 to-accent/5 p-6 rounded-xl">
-                            <div class="bg-primary/10 p-4 rounded-xl mr-6 group-hover:bg-primary/20 transition duration-300">
-                                <i class="fas fa-envelope text-primary text-xl"></i>
+                        <div class="flex items-start">
+                            <div class="pesapad-green p-3 rounded-xl mr-4 flex-shrink-0">
+                                <i class="fas fa-hands-helping text-white"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-dark mb-1">Email Address</h4>
-                                <a href="mailto:briankebabe00@gmail.com" class="text-primary hover:underline font-medium">briankebabe00@gmail.com</a>
+                                <h4 class="font-bold text-gray-900 mb-1">Solving Real Problems</h4>
+                                <p class="text-gray-600">Watched local shops lose money from forgotten bills. Built a solution that actually works for them.</p>
                             </div>
                         </div>
-
-                        <div class="flex items-center group hover-lift bg-gradient-to-r from-accent/5 to-cyan-500/5 p-6 rounded-xl">
-                            <div class="bg-accent/10 p-4 rounded-xl mr-6 group-hover:bg-accent/20 transition duration-300">
-                                <i class="fas fa-phone-alt text-accent text-xl"></i>
+                        
+                        <div class="flex items-start">
+                            <div class="pesapad-green p-3 rounded-xl mr-4 flex-shrink-0">
+                                <i class="fas fa-mobile-alt text-white"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-dark mb-1">Phone Number</h4>
-                                <a href="tel:+254748251265" class="text-accent hover:underline font-medium">+254 748 251 265</a>
+                                <h4 class="font-bold text-gray-900 mb-1">Technology That Helps</h4>
+                                <p class="text-gray-600">Used Flutter to build a fast, reliable app that works even without internet – crucial for local businesses.</p>
                             </div>
                         </div>
-
-                        <div class="flex items-center group hover-lift bg-gradient-to-r from-success/5 to-emerald-500/5 p-6 rounded-xl">
-                            <div class="bg-success/10 p-4 rounded-xl mr-6 group-hover:bg-success/20 transition duration-300">
-                                <i class="fas fa-map-marker-alt text-success text-xl"></i>
+                        
+                        <div class="flex items-start">
+                            <div class="pesapad-green p-3 rounded-xl mr-4 flex-shrink-0">
+                                <i class="fas fa-heart text-white"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-dark mb-1">Location</h4>
-                                <p class="text-success font-medium">Mombasa, Kenya</p>
+                                <h4 class="font-bold text-gray-900 mb-1">Free For Community</h4>
+                                <p class="text-gray-600">Believe essential tools should be accessible. PesaPad is free forever – no ads, no subscriptions.</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Social Links -->
-                    <div class="pt-8">
-                        <h4 class="font-semibold text-dark mb-4">Connect with me</h4>
-                        <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" target="_blank" class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white hover:shadow-lg transition duration-300">
-                                <i class="fab fa-linkedin-in text-lg"></i>
-                            </a>
-                            <a href="https://github.com/briankebabe" target="_blank" class="w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl flex items-center justify-center text-white hover:shadow-lg transition duration-300">
-                                <i class="fab fa-github text-lg"></i>
-                            </a>
-                            <a href="#" class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center text-white hover:shadow-lg transition duration-300">
-                                <i class="fab fa-twitter text-lg"></i>
-                            </a>
-                            <a href="https://briankebabe.github.io/" target="_blank" class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white hover:shadow-lg transition duration-300">
-                                <i class="fas fa-globe text-lg"></i>
-                            </a>
+                    
+                    <!-- Tech Stack -->
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-4">Built With:</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1.5 rounded-full text-sm font-medium">
+                                <i class="fab fa-flutter text-blue-500 mr-1"></i> Flutter
+                            </span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1.5 rounded-full text-sm font-medium">
+                                <i class="fas fa-database text-purple-500 mr-1"></i> SQLite
+                            </span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-sm font-medium">
+                                <i class="fas fa-leaf text-green-500 mr-1"></i> GetX
+                            </span>
+                            <span class="bg-teal-100 text-teal-800 px-3 py-1.5 rounded-full text-sm font-medium">
+                                <i class="fas fa-server text-teal-500 mr-1"></i> Supabase
+                            </span>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl">
-                    <form action="https://formspree.io/f/meozzdqe" method="POST" class="space-y-6" id="contact-form">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
-                                <input 
-                                    type="text" 
-                                    id="name" 
-                                    name="name"
-                                    required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
-                                    placeholder="Your full name"
-                                >
-                            </div>
-                            <div>
-                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                                <input 
-                                    type="email" 
-                                    id="email" 
-                                    name="_replyto"
-                                    required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
-                                    placeholder="your.email@example.com"
-                                >
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                            <input 
-                                type="text" 
-                                id="subject" 
-                                name="_subject"
-                                required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300"
-                                placeholder="What's this about?"
-                            >
-                        </div>
-
-                        <div>
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea 
-                                id="message" 
-                                name="message"
-                                rows="6"
-                                required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition duration-300 resize-none"
-                                placeholder="Tell me about your project or just say hello..."
-                            ></textarea>
-                        </div>
-
-                        <button 
-                            type="submit" 
-                            class="w-full bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition duration-300 flex items-center justify-center"
-                        >
-                            <i class="fas fa-paper-plane mr-2"></i>
-                            Send Message
-                        </button>
-
-                        <input type="text" name="_gotcha" class="hidden">
-                    </form>
-
-                    <!-- Success/Error Messages -->
-                    <div id="form-success" class="hidden mt-6 p-4 bg-success/10 border border-success/20 text-success rounded-xl">
-                        <i class="fas fa-check-circle mr-2"></i>
-                        Message sent successfully! I'll get back to you soon.
-                    </div>
-                    <div id="form-error" class="hidden mt-6 p-4 bg-red-100 border border-red-200 text-red-700 rounded-xl">
-                        <i class="fas fa-exclamation-triangle mr-2"></i>
-                        Failed to send message. Please email me directly at 
-                        <a href="mailto:briankebabe00@gmail.com" class="underline font-medium">briankebabe00@gmail.com</a>.
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 pesapad-gradient text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-medium mb-6">
+                <i class="fas fa-gift mr-2"></i> 100% Free • No Signup Required
+            </div>
+            
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">Get PesaPad Now</h2>
+            <p class="text-xl text-green-100 mb-10 max-w-2xl mx-auto">
+                Join shop owners already tracking their bills smarter. Download the APK directly to your Android phone.
+            </p>
+            
+            <!-- Download Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-1">21MB</div>
+                    <div class="text-green-200 text-sm">Lightweight</div>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-1">100%</div>
+                    <div class="text-green-200 text-sm">Offline</div>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-1">0$</div>
+                    <div class="text-green-200 text-sm">Cost</div>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-1">∞</div>
+                    <div class="text-green-200 text-sm">Free Forever</div>
+                </div>
+            </div>
+            
+            <!-- Download Buttons -->
+            <div class="space-y-6 max-w-md mx-auto">
+                <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing" 
+                   target="_blank"
+                   class="block bg-white text-gray-900 px-8 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl">
+                    <i class="fas fa-download mr-3"></i>
+                    Download APK (Android)
+                </a>
+                
+                <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm text-left">
+                    <h4 class="font-bold mb-2 text-lg">Installation Guide:</h4>
+                    <ol class="text-green-200 text-sm space-y-2">
+                        <li class="flex items-start">
+                            <span class="bg-white text-green-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
+                            <span>Tap download button above</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-white text-green-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
+                            <span>Allow "Install from Unknown Sources" if prompted</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-white text-green-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
+                            <span>Open the downloaded file to install</span>
+                        </li>
+                    </ol>
+                </div>
+                
+                <p class="text-green-200 text-sm">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    Safe & virus-free. Open source code available on <a href="https://github.com/briankebabe/pesapad" class="underline font-medium">GitHub</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TikTok Brainrot Marketing Ideas -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center bg-pink-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
+                    <i class="fab fa-tiktok mr-2"></i> Marketing For The Culture
+                </div>
+                <h2 class="text-3xl font-bold mb-4">TikTok Content Ideas</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    How to make PesaPad go viral with relatable, authentic content
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Idea 1 -->
+                <div class="bg-gray-800 p-6 rounded-2xl">
+                    <div class="text-pink-400 text-2xl mb-4">🎬</div>
+                    <h4 class="font-bold text-lg mb-2">"Before/After" Skit</h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Act out the chaos of paper receipts vs. the calm of PesaPad. Use trending audio.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <i class="fas fa-hashtag mr-1"></i> #SmallBusiness #Fintech #BusinessHack
+                    </div>
+                </div>
+                
+                <!-- Idea 2 -->
+                <div class="bg-gray-800 p-6 rounded-2xl">
+                    <div class="text-pink-400 text-2xl mb-4">📱</div>
+                    <h4 class="font-bold text-lg mb-2">Screen Recording Tutorial</h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        "How I track my market sales in 30 seconds" – quick, satisfying screen recording.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <i class="fas fa-hashtag mr-1"></i> #AppTutorial #Productivity #KenyaBusiness
+                    </div>
+                </div>
+                
+                <!-- Idea 3 -->
+                <div class="bg-gray-800 p-6 rounded-2xl">
+                    <div class="text-pink-400 text-2xl mb-4">👨‍💻</div>
+                    <h4 class="font-bold text-lg mb-2">"Developer Reacts"</h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Show code snippets, talk about building for African businesses. Authentic dev content.
+                    </p>
+                    <div class="text-xs text-gray-500">
+                        <i class="fas fa-hashtag mr-1"></i> #FlutterDev #AfricanTech #MadeInKenya
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 text-center">
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+                    <i class="fas fa-lightbulb mr-2"></i>
+                    TikTok Tip: Be authentic, show real use cases, use local sounds, and engage with comments asking for the download link.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-12">
+    <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <div>
-                    <div class="text-2xl font-bold text-gradient mb-4">Brian Kebabe</div>
-                    <p class="text-gray-400 mb-4">Full-Stack Developer & Tech Solutions Specialist</p>
+                    <div class="flex items-center mb-4">
+                        <div class="pesapad-green w-10 h-10 rounded-xl flex items-center justify-center mr-3">
+                            <i class="fas fa-receipt text-white"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold">PesaPad</span>
+                            <span class="text-xs text-gray-400 block">by Brian Kebabe</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Free bill tracking for small businesses. Built with ❤️ in Mombasa, Kenya.
+                    </p>
                     <p class="text-gray-400 text-sm">
-                        Turning innovative ideas into digital reality with cutting-edge technology and creative solutions.
+                        <i class="fas fa-code mr-2"></i>
+                        Open source Flutter project
                     </p>
                 </div>
                 
                 <div>
                     <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
                     <div class="space-y-2">
-                        <a href="#about" class="block text-gray-400 hover:text-primary transition">About Me</a>
-                        <a href="#experience" class="block text-gray-400 hover:text-primary transition">Experience</a>
-                        <a href="#skills" class="block text-gray-400 hover:text-primary transition">Skills</a>
-                        <a href="#projects" class="block text-gray-400 hover:text-primary transition">Projects</a>
+                        <a href="#app" class="block text-gray-400 hover:text-green-400 transition">The App</a>
+                        <a href="#demo" class="block text-gray-400 hover:text-green-400 transition">Demo Video</a>
+                        <a href="#creator" class="block text-gray-400 hover:text-green-400 transition">The Creator</a>
+                        <a href="#download" class="block text-gray-400 hover:text-green-400 transition">Download</a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="font-semibold mb-4 text-white">Let's Connect</h4>
+                    <h4 class="font-semibold mb-4 text-white">Connect</h4>
                     <div class="flex space-x-4 mb-4">
-                        <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/briankebabe" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary transition">
+                        <a href="https://github.com/briankebabe/pesapad" 
+                           class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-primary transition">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" 
+                           class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:briankebabe00@gmail.com" 
+                           class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition">
+                            <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                     <p class="text-gray-400 text-sm">
-                        <i class="fas fa-envelope mr-2"></i>
-                        briankebabe00@gmail.com
+                        For support: <a href="mailto:briankebabe00@gmail.com" class="text-green-400 hover:underline">briankebabe00@gmail.com</a>
                     </p>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
-                        &copy; <span id="year"></span> Brian Mirieri Kebabe. All rights reserved.
-                    </p>
-                    <div class="flex items-center space-x-4 text-sm text-gray-400">
-                        <span>Made with <i class="fas fa-heart text-red-500"></i> in Kenya</span>
-                    </div>
-                </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; <span id="year"></span> PesaPad by Brian Mirieri Kebabe. 
+                    <span class="block md:inline mt-2 md:mt-0">This app is free software. Your business data never leaves your phone.</span>
+                </p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-gradient-to-r from-primary to-accent text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:shadow-2xl animate-glow">
+    <button id="back-to-top" class="fixed bottom-6 right-6 pesapad-green text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:shadow-2xl">
         <i class="fas fa-chevron-up text-lg"></i>
     </button>
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+    
+    <!-- PesaPad-specific JS -->
+    <script>
+        // Update main.js to handle video play
+        document.getElementById('play-video')?.addEventListener('click', function() {
+            // Replace with actual video embed or link
+            window.open('https://youtube.com/shorts/YOUR_VIDEO_ID', '_blank');
+        });
+        
+        // Update year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
