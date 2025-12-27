@@ -3,68 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PesaPad | Simple Bill Tracker for Small Business</title>
-    <meta name="description" content="PesaPad: Free, offline bill tracking for small businesses. Created by Brian Mirieri Kebabe, Flutter Developer in Kenya">
+    <title>PesaPad | Free Bill Tracker for Small Businesses</title>
+    <meta name="description" content="PesaPad: Free, offline bill tracking app for small businesses. Track customer payments, manage bills, and grow your business. Created by Brian Mirieri Kebabe.">
     
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="PesaPad - Bill Tracker for Small Business">
-    <meta property="og:description" content="Track customer bills & payments offline. Free forever. Built with Flutter by Brian Kebabe">
-    <meta property="og:image" content="assets/images/pesapad-og-banner.png"> <!-- ADD THIS IMAGE -->
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="PesaPad - Free Bill Tracker for Small Businesses">
+    <meta property="og:description" content="Track customer bills & payments offline. Free forever. Built with Flutter in Kenya.">
+    <meta property="og:image" content="assets/images/pesapad-og-image.png">
     <meta property="og:url" content="https://briankebabe.github.io">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PesaPad - Free Bill Tracker">
+    <meta name="twitter:description" content="Offline bill tracking for small businesses. No internet needed.">
+    <meta name="twitter:image" content="assets/images/pesapad-twitter-card.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    
-    <!-- PesaPad Brand Colors -->
-    <style>
-        .pesapad-gradient { 
-            background: linear-gradient(135deg, #0A8A0A 0%, #065F06 50%, #043D04 100%); 
-        }
-        .pesapad-green { background-color: #0A8A0A; }
-        .text-pesapad { color: #0A8A0A; }
-        .border-pesapad { border-color: #0A8A0A; }
-        .hover-pesapad:hover { background-color: #065F06; }
-        
-        /* PesaPad Logo Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .animate-float { animation: float 3s ease-in-out infinite; }
-        
-        /* Feature card pulse */
-        @keyframes subtle-pulse {
-            0%, 100% { box-shadow: 0 10px 30px rgba(10, 138, 10, 0.1); }
-            50% { box-shadow: 0 10px 30px rgba(10, 138, 10, 0.2); }
-        }
-        .feature-pulse { animation: subtle-pulse 4s ease-in-out infinite; }
-    </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
-    <!-- Navigation - PesaPad Branded -->
+    <!-- Navigation -->
     <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <!-- Logo + PesaPad Name -->
-                <div class="flex items-center space-x-3">
-                    <div class="pesapad-green w-10 h-10 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-receipt text-white text-xl"></i>
-                    </div>
+                <!-- Logo -->
+                <a href="#home" class="pesapad-logo">
+                    <!-- REPLACE THIS with your actual logo image -->
+                    <img src="assets/images/pesapad-logo.png" 
+                         alt="PesaPad Logo" 
+                         class="pesapad-logo-img"
+                         onerror="this.src='https://via.placeholder.com/32/194173/ffffff?text=P'">
                     <div>
-                        <span class="text-xl font-bold text-gray-900">PesaPad</span>
-                        <span class="text-xs text-gray-500 block -mt-1">by Brian Kebabe</span>
+                        <div class="pesapad-logo-text">PesaPad</div>
+                        <div class="pesapad-logo-byline">by Brian Kebabe</div>
                     </div>
-                </div>
+                </a>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#app" class="text-gray-700 hover:text-pesapad transition-colors font-medium">The App</a>
-                    <a href="#creator" class="text-gray-700 hover:text-pesapad transition-colors font-medium">The Creator</a>
-                    <a href="#download" class="pesapad-green text-white px-6 py-2.5 rounded-full hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl font-medium">
+                    <a href="#features" class="text-gray-700 hover:text-pesapad transition-colors font-medium">Features</a>
+                    <a href="#demo" class="text-gray-700 hover:text-pesapad transition-colors font-medium">Demo</a>
+                    <a href="#creator" class="text-gray-700 hover:text-pesapad transition-colors font-medium">Creator</a>
+                    <a href="#download" class="btn-pesapad-primary">
                         <i class="fas fa-download mr-2"></i>Download Free
                     </a>
                 </div>
@@ -77,30 +65,33 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 animate-fade-in">
             <div class="px-4 py-4 space-y-3">
                 <a href="#app" class="block py-2 text-gray-700 hover:text-pesapad font-medium">The App</a>
-                <a href="#creator" class="block py-2 text-gray-700 hover:text-pesapad font-medium">The Creator</a>
-                <a href="#download" class="block mt-4 pesapad-green text-white px-6 py-3 rounded-full text-center hover:bg-green-700 font-medium">
+                <a href="#features" class="block py-2 text-gray-700 hover:text-pesapad font-medium">Features</a>
+                <a href="#demo" class="block py-2 text-gray-700 hover:text-pesapad font-medium">Demo</a>
+                <a href="#creator" class="block py-2 text-gray-700 hover:text-pesapad font-medium">Creator</a>
+                <a href="#download" class="block mt-4 btn-pesapad-primary text-center">
                     <i class="fas fa-download mr-2"></i>Download Free
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section - PesaPad Focus -->
-    <section id="app" class="pt-20 pb-12 lg:pt-28 lg:pb-20 bg-gradient-to-b from-green-50 to-white">
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 pb-12 md:pt-28 md:pb-20 bg-gradient-to-b from-blue-50 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <!-- Target User Badge -->
-                    <div class="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <!-- Left Column: Text Content -->
+                <div class="hero-content">
+                    <span class="badge-pesapad inline-flex items-center mb-6">
                         <i class="fas fa-store mr-2"></i> Made for Small Business Owners
-                    </div>
+                    </span>
                     
-                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                        Track Bills. Get Paid.
-                        <span class="text-pesapad block">Simple & Free.</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                        Track Bills.
+                        <span class="text-pesapad block">Get Paid.</span>
+                        Grow Your Business.
                     </h1>
                     
                     <p class="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -108,14 +99,14 @@
                         <span class="font-semibold text-pesapad">100% offline</span>. No internet needed. No monthly fees.
                     </p>
                     
-                    <!-- Key Selling Points -->
+                    <!-- Key Features Grid -->
                     <div class="grid grid-cols-2 gap-4 mb-10">
                         <div class="flex items-center">
-                            <i class="fas fa-wifi-slash text-pesapad mr-3"></i>
+                            <i class="fas fa-plane-slash text-pesapad mr-3"></i>
                             <span class="font-medium">Works Offline</span>
                         </div>
                         <div class="flex items-center">
-                            <i class="fas fa-lock text-pesapad mr-3"></i>
+                            <i class="fas fa-fingerprint text-pesapad mr-3"></i>
                             <span class="font-medium">PIN/Fingerprint Lock</span>
                         </div>
                         <div class="flex items-center">
@@ -129,39 +120,38 @@
                     </div>
                     
                     <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#download" 
-                           class="pesapad-green text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl text-center text-lg">
+                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                        <a href="#download" class="btn-pesapad-primary text-lg py-4 px-8 text-center">
                             <i class="fas fa-download mr-2"></i>Download Free APK
                         </a>
-                        <a href="#demo" 
-                           class="border-2 border-pesapad text-pesapad px-8 py-4 rounded-xl font-semibold hover:bg-green-50 transition-all duration-300 text-center text-lg">
-                            <i class="fas fa-play mr-2"></i>Watch 60-Second Demo
+                        <a href="#demo" class="btn-pesapad-outline text-lg py-4 px-8 text-center">
+                            <i class="fas fa-play mr-2"></i>Watch Demo
                         </a>
                     </div>
                     
-                    <!-- Trust Signals -->
-                    <div class="mt-8 flex items-center text-sm text-gray-500">
+                    <!-- Trust Badge -->
+                    <div class="flex items-center text-sm text-gray-500">
                         <i class="fas fa-shield-alt text-green-500 mr-2"></i>
                         <span>No ads. No hidden costs. Your data stays on your phone.</span>
                     </div>
                 </div>
                 
-                <!-- App Mockup Image -->
-                <div class="relative">
-                    <div class="relative mx-auto max-w-md">
+                <!-- Right Column: App Mockup -->
+                <div class="relative flex justify-center">
+                    <div class="relative">
                         <!-- Phone Frame -->
-                        <div class="relative bg-gray-900 rounded-[2.5rem] p-4 shadow-2xl">
+                        <div class="phone-mockup">
                             <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-10"></div>
-                            <div class="bg-white rounded-[2rem] overflow-hidden border-8 border-gray-900">
-                                <!-- PesaPad dashboard screenshot -->
-                                <img src="assets/images/home_page.jpg" 
-                                     alt="PesaPad App Dashboard" 
-                                     class="w-full h-auto">
+                            <div class="phone-screen">
+                                <!-- REPLACE with your actual app screenshot -->
+                                <img src="assets/images/app-screenshot-dashboard.png" 
+                                     alt="PesaPad App Dashboard"
+                                     class="w-full h-auto"
+                                     onerror="this.src='https://via.placeholder.com/300x600/dbeafe/194173?text=PesaPad+Dashboard'">
                             </div>
                         </div>
                         
-                        <!-- Floating Stats Badges -->
+                        <!-- Floating Stats -->
                         <div class="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg animate-float">
                             <div class="text-center">
                                 <div class="text-2xl font-bold text-pesapad">21MB</div>
@@ -182,11 +172,11 @@
     </section>
 
     <!-- Problem/Solution Section -->
-    <section class="py-16 bg-gradient-to-r from-green-50/50 to-blue-50/50">
+    <section id="app" class="py-16 bg-gradient-to-r from-blue-50/50 to-indigo-50/50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
                 <!-- The Problem -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                <div class="pesapad-card p-6 md:p-8">
                     <div class="flex items-center mb-6">
                         <div class="bg-red-100 p-3 rounded-xl mr-4">
                             <i class="fas fa-exclamation-triangle text-red-600 text-2xl"></i>
@@ -214,9 +204,9 @@
                 </div>
                 
                 <!-- The Solution -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-green-200 feature-pulse">
+                <div class="pesapad-card p-6 md:p-8 feature-pulse border-2 border-blue-200">
                     <div class="flex items-center mb-6">
-                        <div class="pesapad-green p-3 rounded-xl mr-4">
+                        <div class="bg-pesapad p-3 rounded-xl mr-4">
                             <i class="fas fa-check-circle text-white text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900">PesaPad Solution</h3>
@@ -244,69 +234,89 @@
         </div>
     </section>
 
-    <!-- App Demo/Video Section -->
-    <section id="demo" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">See It In Action</h2>
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything You Need</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Powerful features designed for real business needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="pesapad-card p-8 feature-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Customer Management</h3>
+                    <p class="text-gray-600 text-center">
+                        Store customer details, track their payment history, and manage all contacts in one place.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="pesapad-card p-8 feature-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-file-invoice-dollar text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Bill Tracking</h3>
+                    <p class="text-gray-600 text-center">
+                        Create bills instantly, add descriptions, and track payment status for every transaction.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="pesapad-card p-8 feature-card">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Payment Insights</h3>
+                    <p class="text-gray-600 text-center">
+                        See who pays fast, who's delayed, and get insights to improve your cash flow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Video Section -->
+    <section id="demo" class="py-20 bg-gradient-to-b from-white to-blue-50/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">See It In Action</h2>
+                <p class="text-xl text-gray-600">
                     Watch how PesaPad transforms bill tracking in 60 seconds
                 </p>
             </div>
             
             <!-- Video Container -->
-            <div class="max-w-3xl mx-auto">
-                <div class="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl overflow-hidden shadow-2xl">
-                    <!-- Video Thumbnail - REPLACE with actual screenshot -->
-                    <div class="aspect-video bg-gray-800 flex items-center justify-center relative">
-                        <img src="assets/images/pesapad-video-thumbnail.png" 
-                             alt="PesaPad App Demo" 
-                             class="w-full h-full object-cover">
-                        
-                        <!-- Play Button Overlay -->
-                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                            <button id="play-video" class="pesapad-green w-20 h-20 rounded-full flex items-center justify-center hover:bg-green-700 transition-transform transform hover:scale-110">
-                                <i class="fas fa-play text-white text-2xl ml-1"></i>
-                            </button>
-                        </div>
-                    </div>
+            <div class="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
+                <!-- Video Thumbnail -->
+                <div class="aspect-video bg-gray-800 flex items-center justify-center relative">
+                    <!-- REPLACE with your video thumbnail -->
+                    <img src="assets/images/video-thumbnail.png" 
+                         alt="PesaPad Video Demo" 
+                         class="w-full h-full object-cover"
+                         onerror="this.src='https://via.placeholder.com/1280x720/1f2937/ffffff?text=PesaPad+Demo+Video'">
                     
-                    <!-- Video Caption -->
-                    <div class="p-6 bg-white">
-                        <div class="flex items-start justify-between">
-                            <div>
-                                <h4 class="font-bold text-gray-900 text-lg">PesaPad Complete Walkthrough</h4>
-                                <p class="text-gray-600 text-sm mt-1">From adding customers to tracking payments – everything you need to know</p>
-                            </div>
-                            <span class="bg-green-100 text-pesapad px-3 py-1 rounded-full text-sm font-medium">2:30 mins</span>
-                        </div>
+                    <!-- Play Button -->
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <button id="play-video" class="bg-pesapad w-20 h-20 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fas fa-play text-white text-2xl ml-1"></i>
+                        </button>
                     </div>
                 </div>
                 
-                <!-- Feature Highlights Below Video -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-                    <div class="text-center p-6 bg-green-50 rounded-xl">
-                        <div class="pesapad-green w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-user-plus text-white text-xl"></i>
+                <!-- Video Info -->
+                <div class="p-6 bg-white">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">PesaPad Complete Walkthrough</h4>
+                            <p class="text-gray-600 text-sm mt-1">From adding customers to tracking payments</p>
                         </div>
-                        <h4 class="font-bold text-gray-900 mb-2">Add Customers</h4>
-                        <p class="text-gray-600 text-sm">Save customer details once, track all their bills</p>
-                    </div>
-                    
-                    <div class="text-center p-6 bg-blue-50 rounded-xl">
-                        <div class="pesapad-green w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-file-invoice-dollar text-white text-xl"></i>
-                        </div>
-                        <h4 class="font-bold text-gray-900 mb-2">Create Bills</h4>
-                        <p class="text-gray-600 text-sm">Quick bill creation with amount and description</p>
-                    </div>
-                    
-                    <div class="text-center p-6 bg-purple-50 rounded-xl">
-                        <div class="pesapad-green w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-chart-line text-white text-xl"></i>
-                        </div>
-                        <h4 class="font-bold text-gray-900 mb-2">Track Payments</h4>
-                        <p class="text-gray-600 text-sm">See who paid, who's pending, and total balances</p>
+                        <span class="badge-pesapad">2:30 mins</span>
                     </div>
                 </div>
             </div>
@@ -314,25 +324,25 @@
     </section>
 
     <!-- Creator Section -->
-    <section id="creator" class="py-20 bg-gradient-to-b from-white to-green-50/30">
+    <section id="creator" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Meet The Creator</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet The Creator</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Built by a developer who understands small business needs
                 </p>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Your Photo & Quick Intro -->
+                <!-- Creator Info -->
                 <div class="flex flex-col items-center lg:items-start">
                     <div class="relative mb-8">
-                        <div class="w-64 h-64 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                            <img src="assets/images/profile.jpg" 
-                                 alt="Brian Mirieri Kebabe" 
-                                 class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute -bottom-3 -right-3 pesapad-green text-white p-4 rounded-full">
+                        <!-- REPLACE with your profile photo -->
+                        <img src="assets/images/brian-profile.jpg" 
+                             alt="Brian Mirieri Kebabe" 
+                             class="w-64 h-64 rounded-full object-cover border-8 border-white shadow-2xl"
+                             onerror="this.src='https://via.placeholder.com/256/194173/ffffff?text=BK'">
+                        <div class="absolute -bottom-3 -right-3 bg-pesapad text-white p-4 rounded-full">
                             <i class="fas fa-code text-xl"></i>
                         </div>
                     </div>
@@ -345,16 +355,17 @@
                             As a developer from Mombasa, Kenya, I understand the real challenges local businesses face.
                         </p>
                         
+                        <!-- Social Links -->
                         <div class="flex justify-center lg:justify-start space-x-4">
-                            <a href="https://github.com/briankebabe" 
+                            <a href="https://github.com/briankebabe" target="_blank"
                                class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center text-white hover:bg-black transition">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" 
+                            <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" target="_blank"
                                class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white hover:bg-blue-700 transition">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="https://briankebabe.github.io/" 
+                            <a href="https://briankebabe.github.io/" target="_blank"
                                class="w-12 h-12 bg-gray-700 rounded-xl flex items-center justify-center text-white hover:bg-gray-800 transition">
                                 <i class="fas fa-globe"></i>
                             </a>
@@ -363,37 +374,37 @@
                 </div>
                 
                 <!-- Why I Built PesaPad -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+                <div class="pesapad-card p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6">Why I Built PesaPad</h3>
                     
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <div class="pesapad-green p-3 rounded-xl mr-4 flex-shrink-0">
+                            <div class="bg-pesapad p-3 rounded-xl mr-4 flex-shrink-0">
                                 <i class="fas fa-hands-helping text-white"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-900 mb-1">Solving Real Problems</h4>
-                                <p class="text-gray-600">Watched local shops lose money from forgotten bills. Built a solution that actually works for them.</p>
+                                <p class="text-gray-600">Watched local shops lose money from forgotten bills. Built a solution that actually works.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="pesapad-green p-3 rounded-xl mr-4 flex-shrink-0">
+                            <div class="bg-pesapad p-3 rounded-xl mr-4 flex-shrink-0">
                                 <i class="fas fa-mobile-alt text-white"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-900 mb-1">Technology That Helps</h4>
-                                <p class="text-gray-600">Used Flutter to build a fast, reliable app that works even without internet – crucial for local businesses.</p>
+                                <p class="text-gray-600">Used Flutter to build a fast, reliable app that works even without internet.</p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <div class="pesapad-green p-3 rounded-xl mr-4 flex-shrink-0">
+                            <div class="bg-pesapad p-3 rounded-xl mr-4 flex-shrink-0">
                                 <i class="fas fa-heart text-white"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-900 mb-1">Free For Community</h4>
-                                <p class="text-gray-600">Believe essential tools should be accessible. PesaPad is free forever – no ads, no subscriptions.</p>
+                                <p class="text-gray-600">Believe essential tools should be accessible. PesaPad is free forever.</p>
                             </div>
                         </div>
                     </div>
@@ -402,16 +413,16 @@
                     <div class="mt-8 pt-8 border-t border-gray-200">
                         <h4 class="font-bold text-gray-900 mb-4">Built With:</h4>
                         <div class="flex flex-wrap gap-3">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1.5 rounded-full text-sm font-medium">
+                            <span class="badge-pesapad">
                                 <i class="fab fa-flutter text-blue-500 mr-1"></i> Flutter
                             </span>
-                            <span class="bg-purple-100 text-purple-800 px-3 py-1.5 rounded-full text-sm font-medium">
+                            <span class="badge-pesapad">
                                 <i class="fas fa-database text-purple-500 mr-1"></i> SQLite
                             </span>
-                            <span class="bg-green-100 text-green-800 px-3 py-1.5 rounded-full text-sm font-medium">
+                            <span class="badge-pesapad">
                                 <i class="fas fa-leaf text-green-500 mr-1"></i> GetX
                             </span>
-                            <span class="bg-teal-100 text-teal-800 px-3 py-1.5 rounded-full text-sm font-medium">
+                            <span class="badge-pesapad">
                                 <i class="fas fa-server text-teal-500 mr-1"></i> Supabase
                             </span>
                         </div>
@@ -424,212 +435,361 @@
     <!-- Download Section -->
     <section id="download" class="py-20 pesapad-gradient text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-medium mb-6">
+            <span class="inline-flex items-center bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-medium mb-6">
                 <i class="fas fa-gift mr-2"></i> 100% Free • No Signup Required
-            </div>
+            </span>
             
-            <h2 class="text-4xl lg:text-5xl font-bold mb-6">Get PesaPad Now</h2>
-            <p class="text-xl text-green-100 mb-10 max-w-2xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Get PesaPad Now</h2>
+            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
                 Join shop owners already tracking their bills smarter. Download the APK directly to your Android phone.
             </p>
             
             <!-- Download Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                    <div class="text-3xl font-bold mb-1">21MB</div>
-                    <div class="text-green-200 text-sm">Lightweight</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
+                <div class="bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-2xl md:text-3xl font-bold mb-1">21MB</div>
+                    <div class="text-blue-200 text-sm">Lightweight</div>
                 </div>
-                <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                    <div class="text-3xl font-bold mb-1">100%</div>
-                    <div class="text-green-200 text-sm">Offline</div>
+                <div class="bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-2xl md:text-3xl font-bold mb-1">100%</div>
+                    <div class="text-blue-200 text-sm">Offline</div>
                 </div>
-                <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                    <div class="text-3xl font-bold mb-1">0$</div>
-                    <div class="text-green-200 text-sm">Cost</div>
+                <div class="bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-2xl md:text-3xl font-bold mb-1">0$</div>
+                    <div class="text-blue-200 text-sm">Cost</div>
                 </div>
-                <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                    <div class="text-3xl font-bold mb-1">∞</div>
-                    <div class="text-green-200 text-sm">Free Forever</div>
+                <div class="bg-white/10 p-4 md:p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-2xl md:text-3xl font-bold mb-1">∞</div>
+                    <div class="text-blue-200 text-sm">Free Forever</div>
                 </div>
             </div>
             
-            <!-- Download Buttons -->
+            <!-- Download Button -->
             <div class="space-y-6 max-w-md mx-auto">
-                <a href="https://drive.google.com/file/d/1CdxDP42z6zOzAUWYhoQENQfY4-dVJLMf/view?usp=drive_link" 
+                <a href="https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing" 
                    target="_blank"
-                   class="block bg-white text-gray-900 px-8 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl">
+                   class="block bg-white text-gray-900 px-8 py-5 rounded-xl font-bold text-lg md:text-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl hover:shadow-3xl">
                     <i class="fas fa-download mr-3"></i>
                     Download APK (Android)
                 </a>
                 
+                <!-- Installation Guide -->
                 <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm text-left">
                     <h4 class="font-bold mb-2 text-lg">Installation Guide:</h4>
-                    <ol class="text-green-200 text-sm space-y-2">
+                    <ol class="text-blue-200 text-sm space-y-2">
                         <li class="flex items-start">
-                            <span class="bg-white text-green-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
+                            <span class="bg-white text-blue-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">1</span>
                             <span>Tap download button above</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="bg-white text-green-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
+                            <span class="bg-white text-blue-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">2</span>
                             <span>Allow "Install from Unknown Sources" if prompted</span>
                         </li>
                         <li class="flex items-start">
-                            <span class="bg-white text-green-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
+                            <span class="bg-white text-blue-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 mt-0.5">3</span>
                             <span>Open the downloaded file to install</span>
                         </li>
                     </ol>
                 </div>
                 
-                <p class="text-green-200 text-sm">
+                <p class="text-blue-200 text-sm">
                     <i class="fas fa-shield-alt mr-2"></i>
-                    Safe & virus-free. Open source code available on <a href="https://github.com/briankebabe/pesapad" class="underline font-medium">GitHub</a>
+                    Safe & virus-free. Open source code available on 
+                    <a href="https://github.com/briankebabe/pesapad" class="underline font-medium">GitHub</a>
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- TikTok Brainrot Marketing Ideas -->
-    <section class="py-16 bg-gray-900 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center bg-pink-600 px-4 py-2 rounded-full text-sm font-medium mb-4">
-                    <i class="fab fa-tiktok mr-2"></i> Marketing For The Culture
+    <!-- Support Section -->
+    <section id="support" class="py-20 bg-gradient-to-b from-white to-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Hero Support Card -->
+            <div class="pesapad-gradient rounded-2xl p-8 md:p-12 text-white shadow-2xl mb-12">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <!-- App Logo Circle -->
+                    <div class="flex-shrink-0">
+                        <div class="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center p-6">
+                            <div class="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                <!-- REPLACE with your logo -->
+                                <img src="assets/images/pesapad-logo.png" 
+                                     alt="PesaPad Logo" 
+                                     class="w-16 h-16"
+                                     onerror="this.src='https://via.placeholder.com/64/194173/ffffff?text=P'">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Support Text -->
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                            Keep PesaPad Free<br>
+                            <span class="text-blue-100">For Everyone</span>
+                        </h2>
+                        <p class="text-blue-100 text-lg mb-6 max-w-2xl">
+                            Your support directly funds server costs and new features while keeping the app 
+                            100% free for small businesses worldwide. No subscriptions, no ads—just your generosity.
+                        </p>
+                        <div class="inline-flex items-center bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm">
+                            <i class="fas fa-heart text-red-300 mr-2"></i>
+                            Supported by 127+ small business owners
+                        </div>
+                    </div>
                 </div>
-                <h2 class="text-3xl font-bold mb-4">TikTok Content Ideas</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    How to make PesaPad go viral with relatable, authentic content
+            </div>
+
+            <!-- Donation Platforms -->
+            <div class="text-center mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Choose Your Support Platform</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Every donation, no matter the size, helps improve PesaPad for thousands of small businesses.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Idea 1 -->
-                <div class="bg-gray-800 p-6 rounded-2xl">
-                    <div class="text-pink-400 text-2xl mb-4">🎬</div>
-                    <h4 class="font-bold text-lg mb-2">"Before/After" Skit</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Act out the chaos of paper receipts vs. the calm of PesaPad. Use trending audio.
+                <!-- Ko-fi -->
+                <div class="donation-card pesapad-card p-6 md:p-8" data-donation-platform="ko-fi">
+                    <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-mug-hot text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 text-center">Ko-fi</h4>
+                    <p class="text-gray-600 text-center mb-6">
+                        Buy me a coffee! One-time donations with zero platform fees.
                     </p>
-                    <div class="text-xs text-gray-500">
-                        <i class="fas fa-hashtag mr-1"></i> #SmallBusiness #Fintech #BusinessHack
+                    <div class="text-center">
+                        <a href="https://ko-fi.com/pesapad" 
+                           target="_blank"
+                           class="inline-flex items-center bg-gradient-to-r from-pink-500 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-mug-hot mr-2"></i>
+                            Support on Ko-fi
+                        </a>
+                    </div>
+                    <div class="mt-4 text-center text-sm text-gray-500">
+                        <i class="fas fa-percentage mr-1"></i>
+                        0% platform fees
                     </div>
                 </div>
-                
-                <!-- Idea 2 -->
-                <div class="bg-gray-800 p-6 rounded-2xl">
-                    <div class="text-pink-400 text-2xl mb-4">📱</div>
-                    <h4 class="font-bold text-lg mb-2">Screen Recording Tutorial</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        "How I track my market sales in 30 seconds" – quick, satisfying screen recording.
+
+                <!-- Buy Me a Coffee -->
+                <div class="donation-card pesapad-card p-6 md:p-8" data-donation-platform="buymeacoffee">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-coffee text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 text-center">Buy Me a Coffee</h4>
+                    <p class="text-gray-600 text-center mb-6">
+                        Monthly memberships or one-time support. Beautiful donation experience.
                     </p>
-                    <div class="text-xs text-gray-500">
-                        <i class="fas fa-hashtag mr-1"></i> #AppTutorial #Productivity #KenyaBusiness
+                    <div class="text-center">
+                        <a href="https://buymeacoffee.com/pesapad" 
+                           target="_blank"
+                           class="inline-flex items-center bg-gradient-to-r from-amber-500 to-amber-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-coffee mr-2"></i>
+                            Buy Me a Coffee
+                        </a>
+                    </div>
+                    <div class="mt-4 text-center text-sm text-gray-500">
+                        <i class="fas fa-users mr-1"></i>
+                        5% platform fee
                     </div>
                 </div>
-                
-                <!-- Idea 3 -->
-                <div class="bg-gray-800 p-6 rounded-2xl">
-                    <div class="text-pink-400 text-2xl mb-4">👨‍💻</div>
-                    <h4 class="font-bold text-lg mb-2">"Developer Reacts"</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Show code snippets, talk about building for African businesses. Authentic dev content.
+
+                <!-- GitHub Sponsors -->
+                <div class="donation-card pesapad-card p-6 md:p-8" data-donation-platform="github">
+                    <div class="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fab fa-github text-white text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 text-center">GitHub Sponsors</h4>
+                    <p class="text-gray-600 text-center mb-6">
+                        Support the open-source development. See the code, fund the features.
                     </p>
-                    <div class="text-xs text-gray-500">
-                        <i class="fas fa-hashtag mr-1"></i> #FlutterDev #AfricanTech #MadeInKenya
+                    <div class="text-center">
+                        <a href="https://github.com/sponsors/briankebabe" 
+                           target="_blank"
+                           class="inline-flex items-center bg-gradient-to-r from-gray-800 to-gray-900 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+                            <i class="fab fa-github mr-2"></i>
+                            Sponsor on GitHub
+                        </a>
+                    </div>
+                    <div class="mt-4 text-center text-sm text-gray-500">
+                        <i class="fas fa-code mr-1"></i>
+                        For developers
                     </div>
                 </div>
             </div>
-            
-            <div class="mt-10 text-center">
-                <p class="text-gray-400 text-sm max-w-2xl mx-auto">
-                    <i class="fas fa-lightbulb mr-2"></i>
-                    TikTok Tip: Be authentic, show real use cases, use local sounds, and engage with comments asking for the download link.
-                </p>
+
+            <!-- Progress Section -->
+            <div class="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 md:p-8">
+                <h4 class="text-xl font-bold text-gray-900 mb-6">Where Your Money Goes</h4>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-server text-pesapad mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">Server Costs</span>
+                                    <p class="text-sm text-gray-600">Supabase backend & cloud sync</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-mobile-alt text-pesapad mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">App Store Fees</span>
+                                    <p class="text-sm text-gray-600">Google Play & future iOS store</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-code text-pesapad mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">New Features</span>
+                                    <p class="text-sm text-gray-600">Invoice generation, reminders, reports</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-language text-pesapad mt-1 mr-3"></i>
+                                <div>
+                                    <span class="font-medium">Translations</span>
+                                    <p class="text-sm text-gray-600">Swahili & local language support</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="pt-6 border-t border-gray-200">
+                    <div class="flex justify-between text-sm text-gray-600 mb-2">
+                        <span>Monthly Goal: $100</span>
+                        <span id="current-amount">$32</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 32%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">
+                        <span id="supporters-count">58 supporters</span> this month • 
+                        <span id="days-left">8 days left</span>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-pesapad-dark text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 footer-grid">
+                <!-- Logo Column -->
                 <div>
-                    <div class="flex items-center mb-4">
-                        <div class="pesapad-green w-10 h-10 rounded-xl flex items-center justify-center mr-3">
-                            <i class="fas fa-receipt text-white"></i>
-                        </div>
-                        <div>
-                            <span class="text-xl font-bold">PesaPad</span>
-                            <span class="text-xs text-gray-400 block">by Brian Kebabe</span>
-                        </div>
+                    <div class="footer-logo mb-4">
+                        <!-- REPLACE with your logo -->
+                        <img src="assets/images/pesapad-logo-white.png" 
+                             alt="PesaPad Logo" 
+                             class="footer-logo-img"
+                             onerror="this.src='https://via.placeholder.com/40/ffffff/194173?text=P'">
+                        <div class="footer-logo-text">PesaPad</div>
                     </div>
                     <p class="text-gray-400 text-sm mb-4">
                         Free bill tracking for small businesses. Built with ❤️ in Mombasa, Kenya.
                     </p>
-                    <p class="text-gray-400 text-sm">
-                        <i class="fas fa-code mr-2"></i>
-                        Open source Flutter project
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
-                    <div class="space-y-2">
-                        <a href="#app" class="block text-gray-400 hover:text-green-400 transition">The App</a>
-                        <a href="#demo" class="block text-gray-400 hover:text-green-400 transition">Demo Video</a>
-                        <a href="#creator" class="block text-gray-400 hover:text-green-400 transition">The Creator</a>
-                        <a href="#download" class="block text-gray-400 hover:text-green-400 transition">Download</a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4 text-white">Connect</h4>
-                    <div class="flex space-x-4 mb-4">
+                    <div class="flex space-x-4">
                         <a href="https://github.com/briankebabe/pesapad" 
+                           target="_blank"
                            class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/brian-mirieri-1a5930280/" 
-                           class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://twitter.com/pesapad" 
+                           target="_blank"
+                           class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="mailto:briankebabe00@gmail.com" 
-                           class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition">
+                        <a href="mailto:support@pesapad.com" 
+                           class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-500 transition">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
-                    <p class="text-gray-400 text-sm">
-                        For support: <a href="mailto:briankebabe00@gmail.com" class="text-green-400 hover:underline">briankebabe00@gmail.com</a>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#app" class="block text-gray-400 hover:text-blue-300 transition">The App</a>
+                        <a href="#features" class="block text-gray-400 hover:text-blue-300 transition">Features</a>
+                        <a href="#download" class="block text-gray-400 hover:text-blue-300 transition">Download</a>
+                        <a href="#support" class="block text-gray-400 hover:text-blue-300 transition">Support Us</a>
+                    </div>
+                </div>
+                
+                <!-- Support Links -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Support</h4>
+                    <div class="space-y-2">
+                        <a href="https://ko-fi.com/pesapad" 
+                           target="_blank"
+                           class="block text-gray-400 hover:text-pink-400 transition flex items-center">
+                            <i class="fas fa-mug-hot mr-2 text-sm"></i>
+                            Ko-fi
+                        </a>
+                        <a href="https://buymeacoffee.com/pesapad" 
+                           target="_blank"
+                           class="block text-gray-400 hover:text-amber-400 transition flex items-center">
+                            <i class="fas fa-coffee mr-2 text-sm"></i>
+                            Buy Me a Coffee
+                        </a>
+                        <a href="https://github.com/sponsors/briankebabe" 
+                           target="_blank"
+                           class="block text-gray-400 hover:text-gray-300 transition flex items-center">
+                            <i class="fab fa-github mr-2 text-sm"></i>
+                            GitHub Sponsors
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Contact</h4>
+                    <p class="text-gray-400 text-sm mb-2">
+                        <i class="fas fa-envelope mr-2"></i>
+                        briankebabe00@gmail.com
                     </p>
+                    <p class="text-gray-400 text-sm">
+                        <i class="fas fa-phone mr-2"></i>
+                        +254 748 251 265
+                    </p>
+                    <div class="mt-4">
+                        <a href="https://briankebabe.github.io" 
+                           target="_blank"
+                           class="text-blue-300 hover:text-blue-200 text-sm flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            View Developer Portfolio
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="border-t border-gray-800 pt-8 text-center">
                 <p class="text-gray-400 text-sm">
-                    &copy; <span id="year"></span> PesaPad by Brian Mirieri Kebabe. 
-                    <span class="block md:inline mt-2 md:mt-0">This app is free software. Your business data never leaves your phone.</span>
+                    &copy; <span id="current-year">2024</span> PesaPad by Brian Mirieri Kebabe. 
+                    <span class="block md:inline mt-2 md:mt-0">
+                        This app is free software. Your business data never leaves your phone.
+                    </span>
                 </p>
+                <div class="mt-4 text-xs text-gray-500">
+                    <span>Version 1.0.0 • Flutter • Supabase • GetX</span>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 right-6 pesapad-green text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:shadow-2xl">
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-pesapad text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center opacity-0 invisible hover:shadow-2xl transition-all duration-300">
         <i class="fas fa-chevron-up text-lg"></i>
     </button>
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
-    
-    <!-- PesaPad-specific JS -->
-    <script>
-        // Update main.js to handle video play
-        document.getElementById('play-video')?.addEventListener('click', function() {
-            // Replace with actual video embed or link
-            window.open('https://youtube.com/shorts/YOUR_VIDEO_ID', '_blank');
-        });
-        
-        // Update year
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
