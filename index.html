@@ -138,35 +138,35 @@
                 
                 <!-- Right Column: App Mockup -->
                 <div class="relative flex justify-center">
-                    <div class="relative">
-                        <!-- Phone Frame -->
-                        <div class="phone-mockup">
-                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-gray-900 rounded-b-2xl z-10"></div>
-                            <div class="phone-screen">
-                                
-                                <img src="assets/images/home_page.jpg" 
-                                     alt="Pesapad App Dashboard"
-                                     class="w-full h-auto"
-                                     onerror="this.src='https://via.placeholder.com/300x600/dbeafe/194173?text=PesaPad+Dashboard'">
-                            </div>
-                        </div>
+                <div class="relative">
+                    <!-- Clean App Screenshot without phone border -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <!-- IMAGE: App Dashboard Screenshot -->
+                        <img src="assets/images/home_page.jpg" 
+                             alt="Pesapad App Dashboard"
+                             class="w-full max-w-md rounded-2xl"
+                             onerror="this.src='https://via.placeholder.com/600x800/dbeafe/194173?text=PesaPad+Dashboard'">
                         
-                        <!-- Floating Stats -->
-                        <div class="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg animate-float">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-pesapad">21MB</div>
-                                <div class="text-xs text-gray-600">App Size</div>
-                            </div>
+                        <!-- Subtle gradient overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
+                    </div>
+                    
+                    <!-- Floating Stats -->
+                    <div class="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg animate-float">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-pesapad">21MB</div>
+                            <div class="text-xs text-gray-600">App Size</div>
                         </div>
-                        
-                        <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg animate-float" style="animation-delay: 1.5s;">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-pesapad">0$</div>
-                                <div class="text-xs text-gray-600">Cost</div>
-                            </div>
+                    </div>
+                    
+                    <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg animate-float" style="animation-delay: 1.5s;">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-pesapad">0$</div>
+                            <div class="text-xs text-gray-600">Cost</div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -233,64 +233,218 @@
             </div>
         </div>
     </section>
-<!-- Features Section -->
-<section id="features" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything You Need</h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Powerful features designed for real business needs
-            </p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Feature 1: Customer Management -->
-            <div class="pesapad-card p-8 feature-card feature-highlight">
-                <!-- IMAGE PLACEHOLDER: Customer Management Screenshot -->
-                <div class="mb-6 mx-auto w-full h-48 rounded-xl overflow-hidden border border-gray-200">
-                    <img src="assets/images/feature-customers.jpg" 
-                         alt="Customer Management Screen"
-                         class="w-full h-full object-cover"
-                         onerror="this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Customer Management</h3>
-                <p class="text-gray-600 text-center">
-                    Store customer details, track their payment history, and manage all contacts in one place.
+
+
+<!-- Features Section with Slider -->
+    <section id="features" class="py-20 bg-gradient-to-b from-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything You Need</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Powerful features designed for real business needs
                 </p>
             </div>
             
-            <!-- Feature 2: Bill Tracking -->
-            <div class="pesapad-card p-8 feature-card feature-highlight">
-                <!-- IMAGE PLACEHOLDER: Bill Tracking Screenshot -->
-                <div class="mb-6 mx-auto w-full h-48 rounded-xl overflow-hidden border border-gray-200">
-                    <img src="assets/images/feature-bills.jpg" 
-                         alt="Bill Tracking Screen"
-                         class="w-full h-full object-cover"
-                         onerror="this.src='https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+            <!-- Feature Slider Container -->
+            <div class="max-w-4xl mx-auto">
+                <!-- Slider Wrapper -->
+                <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                    <!-- Slides Container -->
+                    <div id="feature-slides" class="flex transition-transform duration-500 ease-in-out">
+                        <!-- Slide 1: Customer Management -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid md:grid-cols-2 gap-8 p-8 md:p-12 bg-white">
+                                <!-- Image Column -->
+                                <div class="order-2 md:order-1">
+                                    <div class="relative rounded-xl overflow-hidden shadow-lg h-64 md:h-80">
+                                        <!-- IMAGE PLACEHOLDER: Customer Management -->
+                                        <img src="assets/images/bills_customers_page.jpg" 
+                                            alt="Customer Management Screen"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.src='https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                                        <div class="absolute bottom-4 left-4">
+                                            <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                                Customer Management
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Content Column -->
+                                <div class="order-1 md:order-2 flex flex-col justify-center">
+                                    <div class="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                                        <i class="fas fa-users mr-2"></i>
+                                        Customer Management
+                                    </div>
+                                    
+                                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                                        Organize All Your Customers
+                                    </h3>
+                                    
+                                    <p class="text-gray-600 mb-6 text-lg">
+                                        Store customer details, track their payment history, and manage all contacts in one organized place.
+                                    </p>
+                                    
+                                    <div class="space-y-3">
+                                        <div class="flex items-center">
+                                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                            <span class="text-gray-700">Add customers with contact details</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                            <span class="text-gray-700">Track total owed and payment status</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                            <span class="text-gray-700">Quick search and filter options</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2: Bill Tracking -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid md:grid-cols-2 gap-8 p-8 md:p-12 bg-white">
+                                <!-- Image Column -->
+                                <div class="order-2 md:order-1">
+                                    <div class="relative rounded-xl overflow-hidden shadow-lg h-64 md:h-80">
+                                        <!-- IMAGE PLACEHOLDER: Bill Tracking -->
+                                        <img src="assets/images/bills_customers_page.jpg" 
+                                            alt="Bill Tracking Screen"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.src='https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                                        <div class="absolute bottom-4 left-4">
+                                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                                Bill Tracking
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Content Column -->
+                                <div class="order-1 md:order-2 flex flex-col justify-center">
+                                    <div class="inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                                        <i class="fas fa-file-invoice-dollar mr-2"></i>
+                                        Bill Tracking
+                                    </div>
+                                    
+                                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                                        Create & Track Bills Instantly
+                                    </h3>
+                                    
+                                    <p class="text-gray-600 mb-6 text-lg">
+                                        Create bills instantly, add descriptions, and track payment status for every transaction.
+                                    </p>
+                                    
+                                    <div class="space-y-3">
+                                        <div class="flex items-center">
+                                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span class="text-gray-700">Add items, quantities, and prices</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span class="text-gray-700">Set due dates and payment reminders</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span class="text-gray-700">Mark bills as paid or partially paid</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3: Payment Insights -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="grid md:grid-cols-2 gap-8 p-8 md:p-12 bg-white">
+                                <!-- Image Column -->
+                                <div class="order-2 md:order-1">
+                                    <div class="relative rounded-xl overflow-hidden shadow-lg h-64 md:h-80">
+                                        <!-- IMAGE PLACEHOLDER: Analytics -->
+                                        <img src="assets/images/bills_customers_page.jpg" 
+                                            alt="Payment Insights Screen"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                                        <div class="absolute bottom-4 left-4">
+                                            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                                Payment Insights
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Content Column -->
+                                <div class="order-1 md:order-2 flex flex-col justify-center">
+                                    <div class="inline-flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                                        <i class="fas fa-chart-line mr-2"></i>
+                                        Payment Insights
+                                    </div>
+                                    
+                                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                                        Smart Payment Analytics
+                                    </h3>
+                                    
+                                    <p class="text-gray-600 mb-6 text-lg">
+                                        See who pays fast, who's delayed, and get insights to improve your cash flow.
+                                    </p>
+                                    
+                                    <div class="space-y-3">
+                                        <div class="flex items-center">
+                                            <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                                            <span class="text-gray-700">Weekly/monthly revenue charts</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                                            <span class="text-gray-700">Customer payment behavior analysis</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                                            <span class="text-gray-700">Identify slow-paying customers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Controls -->
+                    <div class="absolute top-1/2 left-4 right-4 flex justify-between transform -translate-y-1/2 z-10">
+                        <button id="prev-slide" 
+                                class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-gray-700 hover:text-pesapad hover:scale-110 transition-all">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <button id="next-slide" 
+                                class="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-gray-700 hover:text-pesapad hover:scale-110 transition-all">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Enhanced Dot Indicators -->
+                    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+                        <button class="slide-dot w-8 h-2 rounded-full bg-white/50 hover:bg-white transition-all duration-300" 
+                                data-slide="0">
+                            <span class="sr-only">Customer Management</span>
+                        </button>
+                        <button class="slide-dot w-8 h-2 rounded-full bg-white/50 hover:bg-white transition-all duration-300" 
+                                data-slide="1">
+                            <span class="sr-only">Bill Tracking</span>
+                        </button>
+                        <button class="slide-dot w-8 h-2 rounded-full bg-white/50 hover:bg-white transition-all duration-300" 
+                                data-slide="2">
+                            <span class="sr-only">Payment Insights</span>
+                        </button>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Bill Tracking</h3>
-                <p class="text-gray-600 text-center">
-                    Create bills instantly, add descriptions, and track payment status for every transaction.
-                </p>
-            </div>
-            
-            <!-- Feature 3: Payment Insights -->
-            <div class="pesapad-card p-8 feature-card feature-highlight">
-                <!-- IMAGE PLACEHOLDER: Analytics Screenshot -->
-                <div class="mb-6 mx-auto w-full h-48 rounded-xl overflow-hidden border border-gray-200">
-                    <img src="assets/images/feature-analytics.jpg" 
-                         alt="Payment Insights Screen"
-                         class="w-full h-full object-cover"
-                         onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Payment Insights</h3>
-                <p class="text-gray-600 text-center">
-                    See who pays fast, who's delayed, and get insights to improve your cash flow.
-                </p>
+                
+                <!-- Progress Bar and "Explore Features" text REMOVED -->
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Demo Video Section -->
     <section id="demo" class="py-20 bg-gradient-to-b from-white to-blue-50/30">
