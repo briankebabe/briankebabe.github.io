@@ -263,27 +263,57 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Feature highlight */
-.feature-highlight {
-    position: relative;
+/* Feature Card Image */
+.feature-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
 }
 
-.feature-highlight::before {
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(25, 65, 115, 0.1),
+                0 10px 10px -5px rgba(25, 65, 115, 0.04);
+    border-color: #bfdbfe;
+}
+
+.feature-card img {
+    transition: transform 0.5s ease;
+}
+
+.feature-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Image Container */
+.feature-card > div:first-child {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.feature-card > div:first-child::after {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, #194173, #3b82f6);
-    border-radius: 18px;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.1) 100%);
+    pointer-events: none;
 }
 
-.feature-highlight:hover::before {
-    opacity: 1;
+/* Responsive Image Height */
+@media (max-width: 768px) {
+    .feature-card > div:first-child {
+        height: 36vw;
+        max-height: 200px;
+    }
+}
+
+@media (min-width: 769px) {
+    .feature-card > div:first-child {
+        height: 200px;
+    }
 }
 
 /* Loading animation for buttons */
