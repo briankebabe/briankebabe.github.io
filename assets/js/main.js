@@ -10,12 +10,44 @@ tailwind.config = {
                 muted: '#64748B',
                 warning: '#f59e0b',
             },
+            fontFamily: {
+                'heading': ['Poppins', 'sans-serif'],
+                'body': ['Inter', 'sans-serif'],
+            }
         }
     }
 }
 
+// Font loading optimization
+function optimizeFontLoading() {
+    // Add font loading state to body
+    document.body.classList.add('fonts-loading');
+
+    // Check when fonts are loaded
+    const poppins = new FontFace('Poppins', 'url(https://fonts.gstatic.com/s/poppins/v20/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2)');
+    const inter = new FontFace('Inter', 'url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7W0Q5n-wU.woff2)');
+
+    Promise.all([poppins.load(), inter.load()]).then(function (fonts) {
+        fonts.forEach(font => document.fonts.add(font));
+        document.body.classList.remove('fonts-loading');
+        document.body.classList.add('fonts-loaded');
+
+        // Trigger a reflow to ensure smooth transition
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+            document.body.style.opacity = 1;
+        }, 10);
+    }).catch(function (error) {
+        console.log('Font loading failed:', error);
+        document.body.classList.remove('fonts-loading');
+    });
+}
+
 // Main initialization
 document.addEventListener('DOMContentLoaded', function () {
+    // Optimize font loading
+    optimizeFontLoading();
+
     // Initialize Feather icons
     if (typeof feather !== 'undefined') {
         feather.replace();
@@ -130,6 +162,7 @@ function initSupportProgress() {
 
     // Mock data for progress (replace with real API data)
     function updateSupportProgress() {
+        const goalAmountElement = document.getElementById('goal-amount');
         const currentAmountElement = document.getElementById('current-amount');
         const progressFillElement = document.getElementById('progress-fill');
         const supportersCountElement = document.getElementById('supporters-count');
@@ -137,13 +170,14 @@ function initSupportProgress() {
         if (!currentAmountElement || !progressFillElement || !supportersCountElement) return;
 
         const mockData = {
-            currentAmount: 42, // Example data
-            goalAmount: 100,
+            currentAmount: 0,
+            goalAmount: 1000,
             supporters: 0,
             progressPercentage: 0
         };
 
         // Update display
+        goalAmountElement.textContent = `Monthly Goal: $${mockData.goalAmount}`;
         currentAmountElement.textContent = `$${mockData.currentAmount}`;
         supportersCountElement.textContent = `${mockData.supporters} supporters`;
         progressFillElement.style.width = `${mockData.progressPercentage}%`;

@@ -1,7 +1,7 @@
 /* ========== PESAPAD THEME - FINAL VERSION ========== */
 /* Extends Tailwind with PesaPad's navy blue theme */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
     --pesapad-primary: #194173;
@@ -21,6 +21,11 @@
     --pesapad-muted: #64748b;
     /* Gray Blue */
 
+    /* Font Variables */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-logo: 'Poppins', sans-serif;
+
     /* Tailwind color compatibility */
     --primary: #2563EB;
     --secondary: #1D4ED8;
@@ -31,9 +36,89 @@
     --warning: #f59e0b;
 }
 
+/* Font utility classes */
+.font-heading {
+    font-family: var(--font-heading);
+}
+
+.font-body {
+    font-family: var(--font-body);
+}
+
+/* Base font application */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
+    font-weight: 400;
     scroll-behavior: smooth;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings - Poppins with specific weights */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+h2 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+h4 {
+    font-weight: 600;
+}
+
+/* Text sizes with appropriate fonts */
+.text-xs,
+.text-sm,
+.text-base,
+.text-lg,
+.text-xl,
+.text-2xl,
+.text-3xl,
+.text-4xl,
+.text-5xl,
+.text-6xl {
+    font-family: var(--font-body);
+}
+
+/* Override for headings */
+.text-xl,
+.text-2xl,
+.text-3xl,
+.text-4xl,
+.text-5xl,
+.text-6xl.font-bold {
+    font-family: var(--font-heading);
+}
+
+/* Font loading states */
+.fonts-loading * {
+    font-family: system-ui, -apple-system, sans-serif !important;
+}
+
+.fonts-loaded h1,
+.fonts-loaded h2,
+.fonts-loaded h3 {
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 /* Custom animations */
@@ -147,15 +232,18 @@ body {
 }
 
 .pesapad-logo-text {
+    font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 800;
     background: linear-gradient(135deg, #194173 0%, #2a5caa 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: -0.5px;
 }
 
 .pesapad-logo-byline {
+    font-family: var(--font-body);
     font-size: 0.7rem;
     opacity: 0.7;
     font-weight: 500;
@@ -177,13 +265,16 @@ body {
 }
 
 .footer-logo-text {
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 800;
     color: white;
+    letter-spacing: -0.5px;
 }
 
 /* Button Styles */
 .btn-pesapad-primary {
+    font-family: var(--font-heading);
     background: linear-gradient(135deg, #194173 0%, #2a5caa 100%);
     color: white;
     font-weight: 600;
@@ -196,6 +287,7 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    letter-spacing: 0.3px;
 }
 
 .btn-pesapad-primary:hover {
@@ -205,6 +297,7 @@ body {
 }
 
 .btn-pesapad-outline {
+    font-family: var(--font-heading);
     background: transparent;
     color: #194173;
     border: 2px solid #194173;
@@ -217,6 +310,7 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    letter-spacing: 0.3px;
 }
 
 .btn-pesapad-outline:hover {
@@ -240,6 +334,7 @@ body {
 
 /* Badge Styles */
 .badge-pesapad {
+    font-family: var(--font-heading);
     background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
     color: #194173;
     font-weight: 600;
@@ -439,7 +534,7 @@ img {
 
 /* Image fallback styling */
 img[onerror] {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -479,4 +574,64 @@ html {
 [data-feather].text-primary {
     color: #2563EB;
     stroke: #2563EB;
+}
+
+/* Enhanced typography for better readability */
+.hero-content p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 1.125rem;
+}
+
+.pesapad-card p,
+.feature-card p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.text-gray-600 {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav a:not(.pesapad-logo) {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+/* Lists in features/problem-solution sections */
+ul li span {
+    font-family: var(--font-body);
+    font-weight: 400;
+}
+
+/* Download section stats */
+.bg-white\/10 p-4 div:first-child {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+/* Improve button text rendering */
+.btn-pesapad-primary,
+.btn-pesapad-outline {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Improve contrast for accessibility */
+.text-gray-900 {
+    color: #111827;
+}
+
+.text-gray-700 {
+    color: #374151;
+}
+
+/* Optimize paragraph spacing */
+p+p {
+    margin-top: 1em;
 }
