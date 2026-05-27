@@ -1,6 +1,5 @@
 :root {
     --primary: #2c3e50FF;
-    --pesapad: #2c3e50FF;
     --accent: #2E7D32;
     --primary-dark: #0f2a4f;
     --success: #10b981;
@@ -25,7 +24,7 @@ h1, h2, h3, h4, .logo, .btn-primary, .btn-outline {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 48px;
 }
 section {
     padding: 80px 0;
@@ -111,7 +110,7 @@ nav {
 .hero-grid {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 48px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px;
