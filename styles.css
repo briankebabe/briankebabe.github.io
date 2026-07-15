@@ -1,5 +1,5 @@
 :root {
-    --primary: #2c3e50FF;
+    --primary: #1a3a5c;
     --accent: #2E7D32;
     --primary-dark: #0f2a4f;
     --success: #10b981;
@@ -223,7 +223,7 @@ h1 {
 }
 .about-text {
     max-width: 800px;
-    margin: 0 auto 40px;
+    margin: 0 auto 16px;
     text-align: center;
     font-size: 1.125rem;
     line-height: 1.6;
@@ -235,7 +235,7 @@ h1 {
     gap: 24px;
     text-align: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 32px auto 0;
 }
 .stat-number {
     display: block;
@@ -324,7 +324,7 @@ h1 {
 }
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
 }
 .project-card {
@@ -339,21 +339,23 @@ h1 {
     box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
 }
 .project-image {
-    height: 200px;
+    height: 160px;
     background: #eef2ff;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 .project-image img {
     max-height: 100%;
+    max-width: 80%;
     object-fit: contain;
 }
 .project-info {
     padding: 24px;
 }
 .project-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
 }
 .project-subtitle {
@@ -387,6 +389,9 @@ h1 {
     color: var(--text-muted);
 }
 .more-projects a { color: var(--primary); }
+@media (max-width: 1024px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 768px) {
     .projects-grid { grid-template-columns: 1fr; }
 }
