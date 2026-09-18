@@ -246,7 +246,7 @@ const counters = document.querySelectorAll("[data-count]");
 function animateCounter(element) {
   const target = Number(element.dataset.count);
 
-  const duration = 1200;
+  const duration = 1400;
 
   const startTime = performance.now();
 
